@@ -82,6 +82,37 @@
             margin: 0 auto;
         }
         
+        .login-message {
+            background-color: #3a3a3a;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #8000ff;
+            font-weight: bold;
+        }
+        
+        .login-help {
+            margin-top: 20px;
+            color: #999;
+            text-align: center;
+        }
+        
+        .block-message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #500;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            animation: pulse-red 2s infinite;
+        }
+        
+        @keyframes pulse-red {
+            0% { background-color: #500; }
+            50% { background-color: #800; }
+            100% { background-color: #500; }
+        }
+        
         .command-generator-output {
             background-color: #222;
             border: 1px solid #666;
@@ -114,6 +145,7 @@
         <!-- Секция логина (для демонстрации) -->
         <div id="login-section" class="admin-section login-section">
             <h2>Вход для администраторов</h2>
+            <p class="login-message">Эта панель доступна только авторизованным администраторам сервера.</p>
             <div class="form-group">
                 <label for="username">Имя пользователя:</label>
                 <input type="text" id="username" placeholder="Введите имя пользователя">
@@ -123,6 +155,9 @@
                 <input type="password" id="password" placeholder="Введите пароль">
             </div>
             <button class="admin-button" onclick="login()">Войти</button>
+            <div class="login-help">
+                <p><small>Только администраторы имеют право доступа к этой панели.</small></p>
+            </div>
         </div>
         
         <!-- Админ инструменты (скрыты до входа) -->
@@ -296,6 +331,19 @@
     </div>
     
     <script>
+        // Обработка нажатия Enter в поле пароля
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordField = document.getElementById('password');
+            passwordField.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    login();
+                }
+            });
+            
+            // Фокус на поле логина при загрузке
+            document.getElementById('username').focus();
+        });
+        
         function copyToClipboard(element) {
             const text = element.getAttribute('data-copy') || element.innerText;
             navigator.clipboard.writeText(text).then(function() {
@@ -313,16 +361,42 @@
             element.classList.remove('pulse');
         }
         
+        // Переменная для отслеживания попыток входа
+        let loginAttempts = 0;
+        const maxLoginAttempts = 5;
+
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            // Простая демонстрация, в реальном проекте нужна настоящая аутентификация
-            if (username && password) {
+            // Проверка конкретных учетных данных админа
+            if (username === "Zoobastiks" && password === "242344") {
                 document.getElementById('login-section').style.display = 'none';
                 document.getElementById('admin-tools-container').style.display = 'block';
+                // Сбросить счетчик при успешном входе
+                loginAttempts = 0;
             } else {
-                alert('Пожалуйста, введите имя пользователя и пароль');
+                loginAttempts++;
+                
+                if (loginAttempts >= maxLoginAttempts) {
+                    alert('Превышено максимальное количество попыток входа. Доступ заблокирован.');
+                    // Блокировать кнопку
+                    document.querySelector('.admin-button').disabled = true;
+                    // Заблокировать поля ввода
+                    document.getElementById('username').disabled = true;
+                    document.getElementById('password').disabled = true;
+                    
+                    // Добавить сообщение о блокировке
+                    const loginSection = document.getElementById('login-section');
+                    const blockMessage = document.createElement('div');
+                    blockMessage.className = 'block-message';
+                    blockMessage.innerHTML = '<p>Доступ временно заблокирован из-за превышения лимита попыток.</p>' +
+                                             '<p>Обновите страницу для повторной попытки.</p>';
+                    loginSection.appendChild(blockMessage);
+                } else {
+                    const remainingAttempts = maxLoginAttempts - loginAttempts;
+                    alert(`Неверный логин или пароль. Осталось попыток: ${remainingAttempts}`);
+                }
             }
         }
         
