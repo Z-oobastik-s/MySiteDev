@@ -37,29 +37,29 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/gamemode">/gamemode</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/gamemode">/gamemode</span></td>
                         <td>Изменение режима игры</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/gamemode creative">/gamemode creative</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/gamemode creative">/gamemode creative</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/tp">/tp</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/tp">/tp</span></td>
                         <td>Телепортация</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/tp @p 0 100 0">/tp @p 0 100 0</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/tp @p 0 100 0">/tp @p 0 100 0</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/give">/give</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/give">/give</span></td>
                         <td>Выдача предметов</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/give @p diamond 64">/give @p diamond 64</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/give @p diamond 64">/give @p diamond 64</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/effect give">/effect give</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/effect give">/effect give</span></td>
                         <td>Наложение эффектов</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/effect give @p speed 60 2">/effect give @p speed 60 2</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/effect give @p speed 60 2">/effect give @p speed 60 2</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/time">/time</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/time">/time</span></td>
                         <td>Управление временем</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/time set day">/time set day</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/time set day">/time set day</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -77,29 +77,49 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/op">/op</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/op">/op</span></td>
                         <td>Назначить оператором</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/op PlayerName">/op PlayerName</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/op PlayerName">/op PlayerName</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/ban">/ban</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/ban">/ban</span></td>
                         <td>Забанить игрока</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/ban PlayerName Причина">/ban PlayerName Причина</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/ban PlayerName Причина">/ban PlayerName Причина</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/kick">/kick</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/kick">/kick</span></td>
                         <td>Выгнать игрока</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/kick PlayerName Причина">/kick PlayerName Причина</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/kick PlayerName Причина">/kick PlayerName Причина</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/whitelist">/whitelist</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/whitelist">/whitelist</span></td>
                         <td>Управление белым списком</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/whitelist add PlayerName">/whitelist add PlayerName</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/whitelist add PlayerName">/whitelist add PlayerName</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/gamerule">/gamerule</span></td>
-                        <td>Изменение правил игры</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/gamerule keepInventory true">/gamerule keepInventory true</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/gamerule">/gamerule</span></td>
+                        <td>Настройка правил игры</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/gamerule doDaylightCycle false">/gamerule doDaylightCycle false</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/weather">/weather</span></td>
+                        <td>Управление погодой</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/weather clear">/weather clear</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/kill">/kill</span></td>
+                        <td>Уничтожение сущности</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/kill @e[type=zombie]">/kill @e[type=zombie]</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/summon">/summon</span></td>
+                        <td>Призыв сущностей</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/summon creeper ~ ~ ~">/summon creeper ~ ~ ~</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/xp">/xp</span></td>
+                        <td>Управление опытом</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/xp add @p 100 levels">/xp add @p 100 levels</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -107,7 +127,7 @@
         
         <div class="command-section">
             <h2>Новые команды в 1.21.4</h2>
-            <table>
+            <table class="commands-table">
                 <thead>
                     <tr>
                         <th>Команда</th>
@@ -117,29 +137,24 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/trial">/trial</span></td>
-                        <td>Управление испытаниями</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/trial start challenge_name">/trial start challenge_name</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/trialkey">/trialkey</span></td>
+                        <td>Управление пробными ключами для Minecraft Realms</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/trialkey generate">/trialkey generate</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/recipe">/recipe</span></td>
-                        <td>Управление рецептами игрока</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/recipe give @p *">/recipe give @p *</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/wind">/wind</span></td>
+                        <td>Управление ветром в игре</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/wind speed set 10">/wind speed set 10</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/advancement">/advancement</span></td>
-                        <td>Управление достижениями</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/advancement grant @p everything">/advancement grant @p everything</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/item">/item</span></td>
+                        <td>Модификация предметов</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/item replace entity @p weapon.mainhand with diamond_sword">/item replace entity @p weapon.mainhand with diamond_sword</span></td>
                     </tr>
                     <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/execute">/execute</span></td>
-                        <td>Выполнение сложных команд</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/execute as @e at @s run...">/execute as @e at @s run...</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/worldborder">/worldborder</span></td>
-                        <td>Управление границей мира</td>
-                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/worldborder set 1000">/worldborder set 1000</span></td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/transfer">/transfer</span></td>
+                        <td>Перемещение игрока на другой сервер</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" onmouseover="addPulse(this)" onmouseout="removePulse(this)" data-copy="/transfer PlayerName server1">/transfer PlayerName server1</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -160,22 +175,60 @@
     </div>
     
     <script>
-        function copyToClipboard(element) {
-            const text = element.getAttribute('data-copy') || element.innerText;
-            navigator.clipboard.writeText(text).then(function() {
-                alert('Скопировано: ' + text);
-            }, function(err) {
-                alert('Ошибка копирования: ', err);
-            });
-        }
+        let isCopied = false;  // Флаг для отслеживания копирования
         
+        // Функция для копирования текста с временным изменением на "Текст скопирован"
+        function copyToClipboard(element) {
+            const originalText = element.innerText; // Сохраняем исходный текст
+            const textToCopy = element.getAttribute('data-copy') || originalText; // Получаем текст для копирования
+
+            // Копирование в буфер обмена
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            textarea.style.position = 'fixed'; // Предотвращаем прокрутку страницы
+            document.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Ошибка копирования текста', err);
+            }
+            document.body.removeChild(textarea);
+
+            // Меняем текст на "Текст скопирован"
+            const originalColor = element.style.color;
+            element.innerHTML = '<span style="color: #00ff00;">✓ Текст скопирован</span>';
+
+            // Возвращаем исходный текст через 1.5 секунды
+            setTimeout(() => {
+                element.innerHTML = originalText;
+            }, 1500);
+        }
+
+        // Добавление пульсации при наведении
         function addPulse(element) {
             element.classList.add('pulse');
         }
-        
+
+        // Удаление пульсации при уходе курсора
         function removePulse(element) {
             element.classList.remove('pulse');
         }
+
+        // Запретить контекстное меню для всех изображений
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
+        // Отключить перетаскивание всех изображений
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('img').forEach((img) => {
+                img.setAttribute('draggable', 'false');
+            });
+        });
     </script>
 </body>
 </html> 
