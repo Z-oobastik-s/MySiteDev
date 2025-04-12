@@ -113,13 +113,54 @@
             100% { background-color: #500; }
         }
         
+        .command-display {
+            position: relative;
+        }
+        
         .command-generator-output {
             background-color: #222;
             border: 1px solid #666;
-            padding: 10px;
+            padding: 15px;
             border-radius: 4px;
             font-family: monospace;
             min-height: 100px;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+        
+        .command-generator-output.copied {
+            background-color: #1a3a1a;
+        }
+        
+        .copy-button {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .copy-icon {
+            font-size: 16px;
+        }
+        
+        .copy-success {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #00ff00;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            animation: fadeOut 1.5s forwards;
+        }
+        
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            70% { opacity: 1; }
+            100% { opacity: 0; }
         }
     </style>
 </head>
@@ -173,6 +214,11 @@
                             <h3>Генератор команды Give</h3>
                         </div>
                         <div class="form-group">
+                            <label for="give-player">Имя игрока:</label>
+                            <input type="text" id="give-player" placeholder="Введите имя игрока или @p">
+                            <small>Оставьте пустым для @p (ближайший игрок)</small>
+                        </div>
+                        <div class="form-group">
                             <label for="item-id">ID предмета:</label>
                             <input type="text" id="item-id" placeholder="minecraft:diamond_sword">
                         </div>
@@ -186,11 +232,23 @@
                         </div>
                         <div class="form-group">
                             <label for="enchantments">Зачарования (опционально):</label>
-                            <select id="enchantments" multiple>
+                            <select id="enchantments" multiple size="6">
                                 <option value="sharpness:5">Острота V</option>
                                 <option value="unbreaking:3">Прочность III</option>
                                 <option value="mending:1">Починка</option>
                                 <option value="fire_aspect:2">Заговор огня II</option>
+                                <option value="looting:3">Добыча III</option>
+                                <option value="sweeping_edge:3">Разящий клинок III</option>
+                                <option value="efficiency:5">Эффективность V</option>
+                                <option value="fortune:3">Удача III</option>
+                                <option value="silk_touch:1">Шёлковое касание</option>
+                                <option value="power:5">Сила V</option>
+                                <option value="infinity:1">Бесконечность</option>
+                                <option value="flame:1">Воспламенение</option>
+                                <option value="protection:4">Защита IV</option>
+                                <option value="feather_falling:4">Невесомость IV</option>
+                                <option value="thorns:3">Шипы III</option>
+                                <option value="knockback:2">Отбрасывание II</option>
                             </select>
                             <small>Удерживайте Ctrl для выбора нескольких</small>
                         </div>
@@ -203,14 +261,48 @@
                             <h3>Генератор команды Effect</h3>
                         </div>
                         <div class="form-group">
+                            <label for="effect-player">Имя игрока:</label>
+                            <input type="text" id="effect-player" placeholder="Введите имя игрока или @p">
+                            <small>Оставьте пустым для использования выбранной цели</small>
+                        </div>
+                        <div class="form-group">
                             <label for="effect-type">Тип эффекта:</label>
                             <select id="effect-type">
-                                <option value="speed">Скорость</option>
-                                <option value="strength">Сила</option>
-                                <option value="regeneration">Регенерация</option>
-                                <option value="resistance">Сопротивление</option>
-                                <option value="fire_resistance">Огнестойкость</option>
-                                <option value="night_vision">Ночное зрение</option>
+                                <optgroup label="Положительные эффекты">
+                                    <option value="speed">Скорость</option>
+                                    <option value="haste">Спешка</option>
+                                    <option value="strength">Сила</option>
+                                    <option value="instant_health">Исцеление</option>
+                                    <option value="jump_boost">Прыгучесть</option>
+                                    <option value="regeneration">Регенерация</option>
+                                    <option value="resistance">Сопротивление</option>
+                                    <option value="fire_resistance">Огнестойкость</option>
+                                    <option value="water_breathing">Водное дыхание</option>
+                                    <option value="invisibility">Невидимость</option>
+                                    <option value="night_vision">Ночное зрение</option>
+                                    <option value="health_boost">Прилив здоровья</option>
+                                    <option value="absorption">Поглощение</option>
+                                    <option value="saturation">Насыщенность</option>
+                                    <option value="luck">Везение</option>
+                                    <option value="slow_falling">Плавное падение</option>
+                                    <option value="conduit_power">Сила источника</option>
+                                    <option value="dolphins_grace">Грация дельфина</option>
+                                    <option value="hero_of_the_village">Герой деревни</option>
+                                </optgroup>
+                                <optgroup label="Отрицательные эффекты">
+                                    <option value="slowness">Замедление</option>
+                                    <option value="mining_fatigue">Утомление</option>
+                                    <option value="instant_damage">Моментальный урон</option>
+                                    <option value="nausea">Тошнота</option>
+                                    <option value="blindness">Слепота</option>
+                                    <option value="hunger">Голод</option>
+                                    <option value="weakness">Слабость</option>
+                                    <option value="poison">Отравление</option>
+                                    <option value="wither">Иссушение</option>
+                                    <option value="levitation">Левитация</option>
+                                    <option value="unluck">Невезение</option>
+                                    <option value="bad_omen">Дурное знамение</option>
+                                </optgroup>
                             </select>
                         </div>
                         <div class="form-group">
@@ -240,6 +332,11 @@
                             <h3>Генератор команды Teleport</h3>
                         </div>
                         <div class="form-group">
+                            <label for="tp-player">Имя игрока:</label>
+                            <input type="text" id="tp-player" placeholder="Введите имя игрока или @p">
+                            <small>Оставьте пустым для использования выбранной цели</small>
+                        </div>
+                        <div class="form-group">
                             <label for="tp-target">Кого телепортировать:</label>
                             <select id="tp-target">
                                 <option value="@p">Ближайший игрок (@p)</option>
@@ -262,15 +359,73 @@
                         </div>
                         <button class="admin-button" onclick="generateTeleportCommand()">Создать команду</button>
                     </div>
+                    
+                    <!-- Новый генератор GameRule -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <img src="icon/command_block.png" alt="Командный блок" width="32" height="32">
+                            <h3>Генератор команды GameRule</h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="gamerule-type">Правило игры:</label>
+                            <select id="gamerule-type">
+                                <optgroup label="Игровой процесс">
+                                    <option value="keepInventory">keepInventory - Сохранение инвентаря</option>
+                                    <option value="doFireTick">doFireTick - Распространение огня</option>
+                                    <option value="doMobSpawning">doMobSpawning - Спавн мобов</option>
+                                    <option value="doMobLoot">doMobLoot - Дроп с мобов</option>
+                                    <option value="doTileDrops">doTileDrops - Дроп с блоков</option>
+                                    <option value="doEntityDrops">doEntityDrops - Дроп с сущностей</option>
+                                    <option value="mobGriefing">mobGriefing - Разрушение блоков мобами</option>
+                                    <option value="naturalRegeneration">naturalRegeneration - Естественная регенерация</option>
+                                </optgroup>
+                                <optgroup label="Окружение">
+                                    <option value="doDaylightCycle">doDaylightCycle - Смена дня и ночи</option>
+                                    <option value="doWeatherCycle">doWeatherCycle - Смена погоды</option>
+                                    <option value="randomTickSpeed">randomTickSpeed - Скорость случайных тиков</option>
+                                </optgroup>
+                                <optgroup label="Команды">
+                                    <option value="commandBlockOutput">commandBlockOutput - Вывод командных блоков</option>
+                                    <option value="sendCommandFeedback">sendCommandFeedback - Обратная связь команд</option>
+                                    <option value="logAdminCommands">logAdminCommands - Логирование команд админов</option>
+                                    <option value="spectatorsGenerateChunks">spectatorsGenerateChunks - Генерация чанков наблюдателями</option>
+                                    <option value="disableRaids">disableRaids - Отключение рейдов</option>
+                                </optgroup>
+                                <optgroup label="Новые в 1.21">
+                                    <option value="playersSleepingPercentage">playersSleepingPercentage - Процент спящих игроков</option>
+                                    <option value="maxEntityCramming">maxEntityCramming - Максимальное количество мобов в одном блоке</option>
+                                    <option value="snowAccumulationHeight">snowAccumulationHeight - Высота накопления снега</option>
+                                    <option value="doInsomnia">doInsomnia - Появление фантомов</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="gamerule-value">Значение:</label>
+                            <select id="gamerule-value">
+                                <option value="true">Включено (true)</option>
+                                <option value="false">Выключено (false)</option>
+                                <option value="number">Число</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="gamerule-number-container" style="display: none;">
+                            <label for="gamerule-number">Числовое значение:</label>
+                            <input type="number" id="gamerule-number" value="1" min="0">
+                        </div>
+                        <button class="admin-button" onclick="generateGameruleCommand()">Создать команду</button>
+                    </div>
                 </div>
             </div>
             
             <div class="admin-section">
                 <h2>Результат команды</h2>
-                <div class="command-generator-output" id="command-output">
-                    Здесь появится сгенерированная команда
+                <div class="command-display">
+                    <div class="command-generator-output" id="command-output">
+                        Здесь появится сгенерированная команда
+                    </div>
+                    <button class="admin-button copy-button" onclick="copyGeneratedCommand()" data-tooltip="Скопировать команду">
+                        <span class="copy-icon">📋</span> Копировать
+                    </button>
                 </div>
-                <button class="admin-button" onclick="copyGeneratedCommand()" style="margin-top: 10px;">Скопировать команду</button>
             </div>
             
             <div class="admin-section">
@@ -342,15 +497,53 @@
             
             // Фокус на поле логина при загрузке
             document.getElementById('username').focus();
+            
+            // Обработчик для GameRule значения
+            const gameruleValueSelect = document.getElementById('gamerule-value');
+            gameruleValueSelect.addEventListener('change', function() {
+                const numberContainer = document.getElementById('gamerule-number-container');
+                if (this.value === 'number') {
+                    numberContainer.style.display = 'block';
+                } else {
+                    numberContainer.style.display = 'none';
+                }
+            });
         });
         
         function copyToClipboard(element) {
             const text = element.getAttribute('data-copy') || element.innerText;
             navigator.clipboard.writeText(text).then(function() {
-                alert('Скопировано: ' + text);
+                showCopySuccess(element, text);
             }, function(err) {
-                alert('Ошибка копирования: ', err);
+                console.error('Ошибка копирования:', err);
+                showCopyError(element);
             });
+        }
+        
+        function showCopySuccess(element, text) {
+            // Сохраняем оригинальное содержимое
+            const originalContent = element.innerHTML;
+            
+            // Изменяем содержимое на индикацию успеха
+            element.innerHTML = '<span style="color: #00ff00;">✓ Скопировано!</span>';
+            
+            // Возвращаем оригинальное содержимое через время
+            setTimeout(() => {
+                element.innerHTML = originalContent;
+            }, 1500);
+        }
+        
+        function showCopyError(element) {
+            // Сохраняем оригинальное содержимое
+            const originalContent = element.innerHTML;
+            
+            // Изменяем содержимое на индикацию ошибки
+            element.innerHTML = '<span style="color: #ff0000;">❌ Ошибка</span>';
+            
+            // Возвращаем оригинальное содержимое через время
+            setTimeout(() => {
+                element.innerHTML = originalContent;
+            }, 1500);
         }
         
         function addPulse(element) {
@@ -401,6 +594,7 @@
         }
         
         function generateGiveCommand() {
+            const player = document.getElementById('give-player').value;
             const itemId = document.getElementById('item-id').value;
             const count = document.getElementById('item-count').value;
             const name = document.getElementById('item-name').value;
@@ -413,7 +607,7 @@
                 }
             }
             
-            let command = `/give @p ${itemId} ${count}`;
+            let command = `/give ${player} ${itemId} ${count}`;
             
             // Добавляем NBT данные, если есть имя или зачарования
             if (name || selectedEnchants.length > 0) {
@@ -452,38 +646,101 @@
         }
         
         function generateEffectCommand() {
+            const player = document.getElementById('effect-player').value;
             const effectType = document.getElementById('effect-type').value;
             const duration = document.getElementById('effect-duration').value;
             const amplifier = document.getElementById('effect-amplifier').value;
             const target = document.getElementById('effect-target').value;
             
-            const command = `/effect give ${target} minecraft:${effectType} ${duration} ${amplifier}`;
+            let command = `/effect give ${player} minecraft:${effectType} ${duration} ${amplifier}`;
+            
+            if (target && target !== '@p') {
+                command = `/effect give ${target} minecraft:${effectType} ${duration} ${amplifier}`;
+            }
             
             document.getElementById('command-output').innerText = command;
         }
         
         function generateTeleportCommand() {
+            const player = document.getElementById('tp-player').value;
             const target = document.getElementById('tp-target').value;
             const x = document.getElementById('tp-x').value;
             const y = document.getElementById('tp-y').value;
             const z = document.getElementById('tp-z').value;
             
-            const command = `/tp ${target} ${x} ${y} ${z}`;
+            let command = `/tp ${target} ${x} ${y} ${z}`;
+            
+            if (player && player !== '@p') {
+                command = `/tp ${player} ${x} ${y} ${z}`;
+            }
             
             document.getElementById('command-output').innerText = command;
         }
         
+        function generateGameruleCommand() {
+            const gameruleType = document.getElementById('gamerule-type').value;
+            const gameruleValueType = document.getElementById('gamerule-value').value;
+            
+            let finalValue;
+            if (gameruleValueType === 'number') {
+                finalValue = document.getElementById('gamerule-number').value;
+            } else {
+                finalValue = gameruleValueType; // true или false
+            }
+            
+            const command = `/gamerule ${gameruleType} ${finalValue}`;
+            document.getElementById('command-output').innerText = command;
+        }
+        
         function copyGeneratedCommand() {
-            const command = document.getElementById('command-output').innerText;
+            const outputElement = document.getElementById('command-output');
+            const command = outputElement.innerText;
             
             if (command && command !== 'Здесь появится сгенерированная команда') {
                 navigator.clipboard.writeText(command).then(function() {
-                    alert('Команда скопирована в буфер обмена');
+                    // Добавляем класс для визуальной индикации
+                    outputElement.classList.add('copied');
+                    
+                    // Добавляем текст успешного копирования
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'copy-success';
+                    successMessage.textContent = 'Команда скопирована!';
+                    outputElement.appendChild(successMessage);
+                    
+                    // Удаляем индикацию через некоторое время
+                    setTimeout(() => {
+                        outputElement.classList.remove('copied');
+                        if (outputElement.contains(successMessage)) {
+                            outputElement.removeChild(successMessage);
+                        }
+                    }, 1500);
                 }, function(err) {
-                    alert('Ошибка копирования: ' + err);
+                    console.error('Ошибка копирования:', err);
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'copy-success';
+                    errorMessage.style.color = '#ff0000';
+                    errorMessage.textContent = 'Ошибка копирования!';
+                    outputElement.appendChild(errorMessage);
+                    
+                    setTimeout(() => {
+                        if (outputElement.contains(errorMessage)) {
+                            outputElement.removeChild(errorMessage);
+                        }
+                    }, 1500);
                 });
             } else {
-                alert('Сначала сгенерируйте команду');
+                // Визуальная индикация без всплывающего окна
+                const warningMessage = document.createElement('div');
+                warningMessage.className = 'copy-success';
+                warningMessage.style.color = '#ffff00';
+                warningMessage.textContent = 'Сначала сгенерируйте команду!';
+                outputElement.appendChild(warningMessage);
+                
+                setTimeout(() => {
+                    if (outputElement.contains(warningMessage)) {
+                        outputElement.removeChild(warningMessage);
+                    }
+                }, 1500);
             }
         }
     </script>
