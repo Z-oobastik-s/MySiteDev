@@ -3,62 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Информационный портал по Minecraft 1.21.4 - зачарования, эффекты, команды и инструменты для администраторов">
-    <title>Minecraft Tools - Справочник Minecraft 1.21.4</title>
-    <meta http-equiv="refresh" content="0; url=site.html">
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-        }
-        .loading {
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 20px;
-        }
-        .dots {
-            animation: dots 1.5s steps(5, end) infinite;
-        }
-        @keyframes dots {
-            0%, 20% { content: ''; }
-            40% { content: '.'; }
-            60% { content: '..'; }
-            80%, 100% { content: '...'; }
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 12px;
-            color: #666;
-        }
-        a {
-            color: #00aaff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <title>Zoobastiks</title>
+    <meta name="description" content="Powered by Zoobastiks">
+    <link href="style/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="icon/logo.png" type="image/png">
 </head>
 <body>
-    <h1>Minecraft Tools</h1>
-    <p>Информационный портал с ID зачарований, эффектов и команд для Minecraft 1.21.4</p>
-    <p>Если вы не были перенаправлены автоматически, нажмите на <a href="site.html">эту ссылку</a>.</p>
-    <div class="loading">
-        Загрузка<span class="dots" aria-hidden="true"></span>
+
+    <!-- Заголовок страницы (Header Section) -->
+    <div class="bee-container site-background header-section">
+        <img src="icon/bee.png" alt="Пчела" class="bee-image header-bee-image">
+        <div class="text-box header-text-box">
+            <p>Всё, что ты любишь в Minecraft, и немного больше.</p>
+            <p>Ты думаешь, что видел всё? Думаешь, обычный Minecraft тебя ничем не удивит? А вот и нет!</p>
+            <p>Zoobastiks — это не просто сервер, это целая вселенная возможностей, где каждая минута может стать началом чего-то эпического.</p>
+        </div>
     </div>
-    
-    <div class="footer">
-        <p>© 2025 Z-oobastik-s | <a href="https://z-oobastik-s.github.io/MySiteDev/">https://z-oobastik-s.github.io/MySiteDev/</a></p>
-        <p>Все материалы защищены лицензией. Подробности в <a href="LICENSE">LICENSE</a>.</p>
-        <p>Minecraft является товарным знаком Mojang Studios.</p>
+
+    <div class="bee-container reverse-layout site-background header-section reverse-layout">
+        <div class="text-box header-text-box">
+            <p>Ты готов к новым вызовам?</p>
+            <p>Присоединяйся к Zoobastiks и испытай свои силы в самых невероятных приключениях.</p>
+            <p>Огромные миры, захватывающие события и дружная комьюнити ждут тебя прямо сейчас!</p>
+        </div>
+        <img src="icon/ravager.png" alt="Картинка" class="bee-image header-image-right">
     </div>
-    
-    <script>
-        // Redirect to main page
-        window.location.href = 'site.html';
-    </script>
+
+<!-- Информация о сервере (Server Info Section) -->
+<div class="server-info-container server-info-section">
+    <img src="icon/logo_photo_left_right.png" alt="Фото слева" class="server-image-left server-image">
+    <div class="server-status-box server-status-section">
+        <div class="server-status-content">
+            <img src="icon/logo.png" alt="Иконка слева" class="server-icon-left">
+            <p id="server-online-text" class="server-online-text">Онлайн: Загрузка...</p>
+        </div>
+    </div>
+    <div class="server-info-box server-info-box-section">
+<div class="server-info-box-content">
+    <p id="server-ip" class="server-ip-text" onclick="copyServerIP()">
+        <span class="server-label">Айпи сервера</span>
+        <span class="server-address">zoobastiks.20tps.name</span>
+    </p>
+    <p class="server-version">Поддерживает версию</p>
+    <p class="server-version">1.12.2 - 1.21.4</p>
+</div>
+
+
+
+    </div>
+    <img src="icon/logo_photo_left_right.png" alt="Фото справа" class="server-image-right server-image">
+</div>
+
+    <!-- Навигационное меню (Navigation Menu Section) -->
+    <header class="header-content navigation-section">
+        <nav class="center-nav center-navigation">
+            <img src="icon/logo.png" alt="Logo" width="40" height="40" class="logo-nav">
+            <a href="./site.html" class="top-button navigation-button">Главная</a>
+            <a href="/wiki" class="top-button navigation-button">Вики</a>
+            <a href="/votes" class="top-button navigation-button">ГОЛОСОВАНИЕ</a>
+            <a href="/commands" class="top-button navigation-button">Команды</a>
+            <a href="/iditems" class="top-button navigation-button">ID items</a>
+            <a href="/rules" class="top-button navigation-button">Правила</a>
+            <a href="/new" class="top-button navigation-button">Новости</a>
+            <a href="/help" class="top-button navigation-button">Помощь</a>
+            <a href="/region" class="top-button navigation-button">Приваты</a>
+            <a href="https://discord.gg/vEaCqQ7kXN" class="top-button navigation-button">Дискорд</a>
+            <a href="https://t.me/ReZoobastik" class="top-button navigation-button">Телеграм</a>
+        </nav>
+    </header>
+
+<!-- Эффекты (Effects Section) -->
+<div class="content hidden-content effects-section" style="background-color: #121212; color: #ddd;">
+    <div class="effect-column effects-column">
+
+		<!-- Блок: Главная -->
+		<div class="effect-group effect-group-rule">
+			<a href="./site.html" class="copy-text pulse copy-text-discord">
+				Главная
+			</a>
+		</div>
+        <!-- Блок: Вики -->
+        <div class="effect-group effect-group-rule">
+            <p class="copy-text pulse copy-text-rule">Вики</p>
+        </div>
+        <!-- Блок: Голосование -->
+        <div class="effect-group effect-group-rule">
+            <p class="copy-text pulse copy-text-rule">Голосование</p>
+        </div>
+        <!-- Блок: Команды -->
+        <div class="effect-group effect-group-rule">
+            <p class="copy-text pulse copy-text-rule">Команды</p>
+        </div>
+        <!-- Блок: Id Items -->
+        <div class="effect-group effect-group-rule">
+            <p class="copy-text pulse copy-text-rule">Id items</p>
+        </div>
+        <!-- Блок: Id Effect -->
+        <div class="effect-group effect-group-rule">
+            <p class="copy-text pulse copy-text-rule">Id Effect</p>
+        </div>
+        <!-- Блок: Правила -->
+        <div class="effect-group effect-group-rule">
+            <p class="copy-text pulse copy-text-rule">Правила</p>
+        </div>
+		<!-- Блок: Новости -->
+		<div class="effect-group effect-group-news">
+			<p class="copy-text pulse copy-text-rule">Новости</p>
+		</div>
+        <!-- Блок: Помощь -->
+        <div class="effect-group effect-group-help">
+            <p class="copy-text pulse copy-text-help">Помощь</p>
+        </div>
+        <!-- Блок: Приваты -->
+        <div class="effect-group effect-group-privates">
+            <p class="copy-text pulse copy-text-privates">Приваты</p>
+        </div>
+        <!-- Блок: Телеграм канал -->
+        <div class="effect-group effect-group-telegram">
+            <a href="https://t.me/ReZoobastik" class="copy-text pulse copy-text-discord" target="_blank" rel="noopener noreferrer">
+				Телеграм
+			</a>
+        </div>
+		<!-- Блок: Дискорд -->
+		<div class="effect-group effect-group-discord">
+			<a href="https://discord.gg/vEaCqQ7kXN" class="copy-text pulse copy-text-discord" target="_blank" rel="noopener noreferrer">
+				Дискорд
+			</a>
+		</div>
+
+
+    </div>
+</div>
+
+
+    <!-- Кнопки навигации (Navigation Buttons Section) -->
+    <div class="fixed-navigation fixed-nav-buttons">
+        <a href="#" class="nav-button nav-button-back">Назад</a>
+        <a href="#" class="scroll-button scroll-up" id="scroll-up">Вверх</a>
+        <a href="#" class="scroll-button scroll-down" id="scroll-down" style="display: none;">Вниз</a>
+        <a href="#" class="nav-button nav-button-forward">Вперёд</a>
+    </div>
+
+    <!-- Подключение скрипта -->
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
