@@ -1,31 +1,31 @@
-# Zoobastiks Minecraft Server Website
+# Сайт сервера Minecraft Zoobastiks
 
-This repository contains the code for the Zoobastiks Minecraft server website, which provides information about server features, rules, commands, and more.
+Этот репозиторий содержит код для веб-сайта сервера Minecraft Zoobastiks, который предоставляет информацию о функциях сервера, правилах, командах и многом другом.
 
-## Live Site
+## Сайт
 
-Visit the website at: [https://z-oobastik-s.github.io/MySiteDev/](https://z-oobastik-s.github.io/MySiteDev/)
+Посетите сайт по ссылке: [https://z-oobastik-s.github.io/MySiteDev/](https://z-oobastik-s.github.io/MySiteDev/)
 
-## Features
+## Функции
 
-- Server information and status
-- Wiki and documentation
-- Commands reference
-- Item IDs and effects
-- Server rules
-- News and updates
-- Discord and Telegram community links
+- Информация о сервере и статус
+- Вики и документация
+- Справочник по командам
+- ID предметов и эффектов
+- Правила сервера
+- Новости и обновления
+- Ссылки на сообщества Discord и Telegram
 
-## Supported Minecraft Versions
+## Поддерживаемые версии Minecraft
 
-The server supports Minecraft versions 1.12.2 - 1.21.4
+Сервер поддерживает версии Minecraft 1.12.2 - 1.21.4
 
-## Contact
+## Контакты
 
-Join our community:
+Присоединяйтесь к нашему сообществу:
 - [Discord](https://discord.gg/vEaCqQ7kXN)
 - [Telegram](https://t.me/ReZoobastik)
 
-## Server IP
+## IP сервера
 
 `zoobastiks.20tps.name` 
