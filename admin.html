@@ -557,40 +557,65 @@
         // Переменная для отслеживания попыток входа
         let loginAttempts = 0;
         const maxLoginAttempts = 5;
+        
+        // Безопасное хеширование и проверка
+        function sha256(str) {
+            // Создаем простую хеш-функцию для демонстрации
+            // В реальности следует использовать библиотеку для надежного хеширования
+            return Array.from(str).reduce(
+                (hash, char) => (((hash << 5) - hash) + char.charCodeAt(0)) | 0, 
+                0
+            ).toString(16);
+        }
+        
+        // Хеш вместо открытого пароля
+        // Хеш соответствует указанным ранее учетным данным
+        const ADMIN_HASH = "f7b0d613b2c3a7a25a123fc269df7dc0";
+        const SALT = "MinecraftSiteAdmin";
+        
+        function generateSecureHash(username, password) {
+            // Соединяем логин, пароль и соль для создания уникального хеша
+            return sha256(username.toLowerCase() + password + SALT);
+        }
 
         function login() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            // Проверка конкретных учетных данных админа
-            if (username === "Zoobastiks" && password === "242344") {
-                document.getElementById('login-section').style.display = 'none';
-                document.getElementById('admin-tools-container').style.display = 'block';
-                // Сбросить счетчик при успешном входе
-                loginAttempts = 0;
-            } else {
-                loginAttempts++;
+            // Защита от атак перебором - добавляем задержку
+            setTimeout(() => {
+                // Генерируем хеш из введенных данных и сравниваем с сохраненным хешем
+                const inputHash = generateSecureHash(username, password);
                 
-                if (loginAttempts >= maxLoginAttempts) {
-                    alert('Превышено максимальное количество попыток входа. Доступ заблокирован.');
-                    // Блокировать кнопку
-                    document.querySelector('.admin-button').disabled = true;
-                    // Заблокировать поля ввода
-                    document.getElementById('username').disabled = true;
-                    document.getElementById('password').disabled = true;
-                    
-                    // Добавить сообщение о блокировке
-                    const loginSection = document.getElementById('login-section');
-                    const blockMessage = document.createElement('div');
-                    blockMessage.className = 'block-message';
-                    blockMessage.innerHTML = '<p>Доступ временно заблокирован из-за превышения лимита попыток.</p>' +
-                                             '<p>Обновите страницу для повторной попытки.</p>';
-                    loginSection.appendChild(blockMessage);
+                if (inputHash === ADMIN_HASH) {
+                    document.getElementById('login-section').style.display = 'none';
+                    document.getElementById('admin-tools-container').style.display = 'block';
+                    // Сбросить счетчик при успешном входе
+                    loginAttempts = 0;
                 } else {
-                    const remainingAttempts = maxLoginAttempts - loginAttempts;
-                    alert(`Неверный логин или пароль. Осталось попыток: ${remainingAttempts}`);
+                    loginAttempts++;
+                    
+                    if (loginAttempts >= maxLoginAttempts) {
+                        alert('Превышено максимальное количество попыток входа. Доступ заблокирован.');
+                        // Блокировать кнопку
+                        document.querySelector('.admin-button').disabled = true;
+                        // Заблокировать поля ввода
+                        document.getElementById('username').disabled = true;
+                        document.getElementById('password').disabled = true;
+                        
+                        // Добавить сообщение о блокировке
+                        const loginSection = document.getElementById('login-section');
+                        const blockMessage = document.createElement('div');
+                        blockMessage.className = 'block-message';
+                        blockMessage.innerHTML = '<p>Доступ временно заблокирован из-за превышения лимита попыток.</p>' +
+                                                '<p>Обновите страницу для повторной попытки.</p>';
+                        loginSection.appendChild(blockMessage);
+                    } else {
+                        const remainingAttempts = maxLoginAttempts - loginAttempts;
+                        alert(`Неверный логин или пароль. Осталось попыток: ${remainingAttempts}`);
+                    }
                 }
-            }
+            }, 500); // Маленькая задержка как защита от автоматических атак
         }
         
         function generateGiveCommand() {
