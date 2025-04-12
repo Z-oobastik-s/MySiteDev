@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команды майнкрафт</title>
+    <link rel="stylesheet" href="style.css"> <!-- Подключаем внешний CSS файл -->
+</head>
+<body>
+    <!-- Верхнее меню с кнопками -->
+    <div class="top-buttons">
+        <button class="top-button" onclick="location.href='site.html'">ID Enchant minecraft</button>
+        <button class="top-button" onclick="location.href='Effect.html'">Id Effect Minecraft</button>
+        <button class="top-button" onclick="location.href='Commands.html'">Commands minecraft 1.21.4+</button>
+        <button class="top-button" onclick="location.href='admin.html'">Admin Panel</button>
+    </div>
+    <div class="content">
+        <!-- Заголовок -->
+        <div class="header">
+            <div class="header-content">
+                <img src="icon/command_block.png" alt="Командный блок" width="64" height="64" draggable="false" class="icon-left">
+                <h1 class="header-title">Команды Minecraft 1.21.4</h1>
+                <img src="icon/command_block.png" alt="Командный блок" width="64" height="64" draggable="false" class="icon-right">
+            </div>
+        </div>
+        
+        <!-- Разделы команд -->
+        <div class="command-section">
+            <h2>Основные команды</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Описание</th>
+                        <th>Пример</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/gamemode">/gamemode</span></td>
+                        <td>Изменение режима игры</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/gamemode creative">/gamemode creative</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/tp">/tp</span></td>
+                        <td>Телепортация</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/tp @p 0 100 0">/tp @p 0 100 0</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/give">/give</span></td>
+                        <td>Выдача предметов</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/give @p diamond 64">/give @p diamond 64</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/effect give">/effect give</span></td>
+                        <td>Наложение эффектов</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/effect give @p speed 60 2">/effect give @p speed 60 2</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/time">/time</span></td>
+                        <td>Управление временем</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/time set day">/time set day</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="command-section">
+            <h2>Команды для администраторов</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Описание</th>
+                        <th>Пример</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/op">/op</span></td>
+                        <td>Назначить оператором</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/op PlayerName">/op PlayerName</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/ban">/ban</span></td>
+                        <td>Забанить игрока</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/ban PlayerName Причина">/ban PlayerName Причина</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/kick">/kick</span></td>
+                        <td>Выгнать игрока</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/kick PlayerName Причина">/kick PlayerName Причина</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/whitelist">/whitelist</span></td>
+                        <td>Управление белым списком</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/whitelist add PlayerName">/whitelist add PlayerName</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/gamerule">/gamerule</span></td>
+                        <td>Изменение правил игры</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/gamerule keepInventory true">/gamerule keepInventory true</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="command-section">
+            <h2>Новые команды в 1.21.4</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Описание</th>
+                        <th>Пример</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/trial">/trial</span></td>
+                        <td>Управление испытаниями</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/trial start challenge_name">/trial start challenge_name</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/recipe">/recipe</span></td>
+                        <td>Управление рецептами игрока</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/recipe give @p *">/recipe give @p *</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/advancement">/advancement</span></td>
+                        <td>Управление достижениями</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/advancement grant @p everything">/advancement grant @p everything</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/execute">/execute</span></td>
+                        <td>Выполнение сложных команд</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/execute as @e at @s run...">/execute as @e at @s run...</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/worldborder">/worldborder</span></td>
+                        <td>Управление границей мира</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)" data-copy="/worldborder set 1000">/worldborder set 1000</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Кнопки для перехода по страницам -->
+    <div class="navigation">
+        <a href="Effect.html" class="nav-button nav-prev">Назад</a>
+        <a href="admin.html" class="nav-button nav-next">Вперёд</a>
+    </div>
+    
+    <script>
+        function copyToClipboard(element) {
+            const text = element.getAttribute('data-copy') || element.innerText;
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Скопировано: ' + text);
+            }, function(err) {
+                alert('Ошибка копирования: ', err);
+            });
+        }
+        
+        function addPulse(element) {
+            element.classList.add('pulse');
+        }
+        
+        function removePulse(element) {
+            element.classList.remove('pulse');
+        }
+    </script>
+</body>
+</html> 

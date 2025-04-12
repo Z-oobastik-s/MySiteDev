@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Tools - Redirect</title>
+    <meta http-equiv="refresh" content="0; url=site.html">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .loading {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .dots {
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Minecraft Tools</h1>
+    <p>Если вы не были перенаправлены автоматически, нажмите на <a href="site.html" style="color: #00aaff;">эту ссылку</a>.</p>
+    <div class="loading">
+        Загрузка<span class="dots" aria-hidden="true"></span>
+    </div>
+    
+    <script>
+        // Redirect to main page
+        window.location.href = 'site.html';
+    </script>
+</body>
+</html> 
