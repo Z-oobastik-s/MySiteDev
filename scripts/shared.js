@@ -82,31 +82,31 @@ function initNavigationButtons() {
     // Получаем текущий путь страницы
     const currentPath = window.location.pathname;
     
-    // Определяем порядок страниц для навигации
+    // Проверяем, находимся ли мы в корне или в подпапке pages
+    const isInPages = currentPath.includes('/pages/');
+    
+    // Определяем порядок страниц для навигации с правильными путями
     const pageOrder = [
-        '/index.html',
-        '/pages/wiki.html',
-        '/pages/voting.html',
-        '/pages/commands.html',
-        '/pages/rules.html',
-        '/pages/news.html',
-        '/pages/help.html',
-        '/pages/id_items.html'
+        { name: 'index', path: isInPages ? '../index.html' : 'index.html' },
+        { name: 'wiki', path: isInPages ? 'wiki.html' : 'pages/wiki.html' },
+        { name: 'voting', path: isInPages ? 'voting.html' : 'pages/voting.html' },
+        { name: 'commands', path: isInPages ? 'commands.html' : 'pages/commands.html' },
+        { name: 'rules', path: isInPages ? 'rules.html' : 'pages/rules.html' },
+        { name: 'news', path: isInPages ? 'news.html' : 'pages/news.html' },
+        { name: 'help', path: isInPages ? 'help.html' : 'pages/help.html' },
+        { name: 'id_items', path: isInPages ? 'id_items.html' : 'pages/id_items.html' }
     ];
-    
-    // Определяем базовый URL для правильной навигации
-    const baseUrl = currentPath.includes('/MySiteDev/') ? '/MySiteDev' : '';
-    
-    // Нормализация текущего пути для сравнения
-    let normalizedPath = currentPath;
-    if (currentPath.endsWith('/') || currentPath.endsWith('/MySiteDev/')) {
-        normalizedPath = baseUrl + '/index.html';
-    }
     
     // Находим индекс текущей страницы в pageOrder
     let currentPageIndex = -1;
+    
+    // Получаем имя текущего файла
+    const currentFileName = currentPath.split('/').pop() || 'index.html';
+    
+    // Находим индекс текущей страницы в pageOrder
     for (let i = 0; i < pageOrder.length; i++) {
-        if (normalizedPath.includes(pageOrder[i])) {
+        if (currentFileName === pageOrder[i].path.split('/').pop() || 
+           (currentFileName === '' && pageOrder[i].name === 'index')) {
             currentPageIndex = i;
             break;
         }
@@ -117,10 +117,10 @@ function initNavigationButtons() {
         backBtn.addEventListener('click', function(e) {
             e.preventDefault();
             if (currentPageIndex > 0) {
-                window.location.href = baseUrl + pageOrder[currentPageIndex - 1];
+                window.location.href = pageOrder[currentPageIndex - 1].path;
             } else if (currentPageIndex === 0) {
                 // Если мы на первой странице, переходим на последнюю
-                window.location.href = baseUrl + pageOrder[pageOrder.length - 1];
+                window.location.href = pageOrder[pageOrder.length - 1].path;
             } else {
                 // Если страница не найдена в списке, используем browser history
                 history.back();
@@ -131,10 +131,10 @@ function initNavigationButtons() {
         forwardBtn.addEventListener('click', function(e) {
             e.preventDefault();
             if (currentPageIndex >= 0 && currentPageIndex < pageOrder.length - 1) {
-                window.location.href = baseUrl + pageOrder[currentPageIndex + 1];
+                window.location.href = pageOrder[currentPageIndex + 1].path;
             } else if (currentPageIndex === pageOrder.length - 1) {
                 // Если мы на последней странице, переходим на первую
-                window.location.href = baseUrl + pageOrder[0];
+                window.location.href = pageOrder[0].path;
             } else {
                 // Если страница не найдена в списке, используем browser history
                 history.forward();
