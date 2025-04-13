@@ -76,48 +76,91 @@ function initScrollButtons() {
 function initNavigationButtons() {
     const backBtn = document.querySelector('.nav-button-back');
     const forwardBtn = document.querySelector('.nav-button-forward');
+    const scrollUpBtn = document.getElementById('scroll-up');
+    const scrollDownBtn = document.getElementById('scroll-down');
     
-    // Проверяем, не главная ли это страница (index.html)
-    const isIndexPage = window.location.pathname.includes('index.html') || 
-                        window.location.pathname.endsWith('/') ||
-                        window.location.pathname.endsWith('/MySiteDev/');
+    // Получаем текущий путь страницы
+    const currentPath = window.location.pathname;
+    
+    // Определяем порядок страниц для навигации
+    const pageOrder = [
+        '/index.html',
+        '/pages/wiki.html',
+        '/pages/voting.html',
+        '/pages/commands.html',
+        '/pages/rules.html',
+        '/pages/news.html',
+        '/pages/help.html',
+        '/pages/id_items.html'
+    ];
+    
+    // Определяем базовый URL для правильной навигации
+    const baseUrl = currentPath.includes('/MySiteDev/') ? '/MySiteDev' : '';
+    
+    // Нормализация текущего пути для сравнения
+    let normalizedPath = currentPath;
+    if (currentPath.endsWith('/') || currentPath.endsWith('/MySiteDev/')) {
+        normalizedPath = baseUrl + '/index.html';
+    }
+    
+    // Находим индекс текущей страницы в pageOrder
+    let currentPageIndex = -1;
+    for (let i = 0; i < pageOrder.length; i++) {
+        if (normalizedPath.includes(pageOrder[i])) {
+            currentPageIndex = i;
+            break;
+        }
+    }
     
     if (backBtn && forwardBtn) {
-        if (isIndexPage) {
-            // На главной странице (index.html) используем стандартные функции истории браузера
-            backBtn.addEventListener('click', function(e) {
-                e.preventDefault();
+        // Кнопка назад: переход на предыдущую страницу в pageOrder
+        backBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentPageIndex > 0) {
+                window.location.href = baseUrl + pageOrder[currentPageIndex - 1];
+            } else if (currentPageIndex === 0) {
+                // Если мы на первой странице, переходим на последнюю
+                window.location.href = baseUrl + pageOrder[pageOrder.length - 1];
+            } else {
+                // Если страница не найдена в списке, используем browser history
                 history.back();
-            });
-            
-            forwardBtn.addEventListener('click', function(e) {
-                e.preventDefault();
+            }
+        });
+        
+        // Кнопка вперед: переход на следующую страницу в pageOrder
+        forwardBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentPageIndex >= 0 && currentPageIndex < pageOrder.length - 1) {
+                window.location.href = baseUrl + pageOrder[currentPageIndex + 1];
+            } else if (currentPageIndex === pageOrder.length - 1) {
+                // Если мы на последней странице, переходим на первую
+                window.location.href = baseUrl + pageOrder[0];
+            } else {
+                // Если страница не найдена в списке, используем browser history
                 history.forward();
+            }
+        });
+    }
+    
+    // Кнопки скролла вверх и вниз
+    if (scrollUpBtn) {
+        scrollUpBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
-        } else {
-            // На всех остальных страницах используем прокрутку
-            backBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Прокрутка на 1000px вверх или в начало страницы, если меньше 1000px от верха
-                const targetPosition = Math.max(0, window.pageYOffset - 1000);
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+        });
+    }
+    
+    if (scrollDownBtn) {
+        scrollDownBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
             });
-            
-            forwardBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Прокрутка на 1000px вниз
-                const targetPosition = window.pageYOffset + 1000;
-                // Не прокручиваем дальше конца страницы
-                const maxScroll = document.body.scrollHeight - window.innerHeight;
-                window.scrollTo({
-                    top: Math.min(targetPosition, maxScroll),
-                    behavior: 'smooth'
-                });
-            });
-        }
+        });
     }
 }
 
