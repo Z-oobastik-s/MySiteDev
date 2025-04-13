@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const serverIPElement = document.getElementById('server-ip');
     const statusElement = document.getElementById("server-online-text");
     const serverAddress = serverIPElement.querySelector('.server-address'); // IP-адрес
+    const backButton = document.querySelector('.nav-button-back');
+    const forwardButton = document.querySelector('.nav-button-forward');
 
     // Функция для копирования IP
     function copyServerIP() {
@@ -55,6 +57,38 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         toggleScrollButtons();
+    }
+
+    // Настройка навигационных кнопок (вперед и назад) для index.html
+    if (backButton && forwardButton) {
+        // Порядок страниц для навигации
+        const pageOrder = [
+            { name: 'index', path: 'index.html' },
+            { name: 'wiki', path: 'pages/wiki.html' },
+            { name: 'voting', path: 'pages/voting.html' },
+            { name: 'commands', path: 'pages/commands.html' },
+            { name: 'rules', path: 'pages/rules.html' },
+            { name: 'news', path: 'pages/news.html' },
+            { name: 'help', path: 'pages/help.html' },
+            { name: 'id_items', path: 'pages/id_items.html' }
+        ];
+
+        // Текущая страница - index.html (первая в списке)
+        const currentPageIndex = 0;
+
+        // Кнопка назад: переход на предыдущую страницу в pageOrder
+        backButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Если мы на первой странице, переходим на последнюю
+            window.location.href = pageOrder[pageOrder.length - 1].path;
+        });
+        
+        // Кнопка вперед: переход на следующую страницу в pageOrder
+        forwardButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Переходим на следующую страницу (wiki.html)
+            window.location.href = pageOrder[currentPageIndex + 1].path;
+        });
     }
 
     // Обработчики для кнопок прокрутки
