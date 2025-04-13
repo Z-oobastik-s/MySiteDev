@@ -73,111 +73,6 @@
     transition: transform 0.3s ease; /* Плавный переход */
 }
 
-/* Эффекты (Effects Section) */
-.effects-section {
-    background-image: url('../icon/background_star.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 100px 20px 60px; /* Увеличиваем паддинг сверху */
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 120px; /* Увеличен отступ сверху для предотвращения перекрытия с навигационным меню */
-}
-
-/* Общие стили для секции эффектов */
-.effect-column {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Начало настройки текста и дизайна для нижнего блока кнопок Главная, Вики, Голосование и т.д */
-/* Общие стили для кнопок */
-.effect-group {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 150px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 3px solid transparent;
-    border-radius: 15px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.7);
-    background-image: url('../icon/menu_minecraft_on.jpg'); /* Постоянный фон кнопки */
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-/* Эффекты на кнопке */
-.effect-group:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 140, 0, 1), inset 0 0 20px rgba(0, 0, 0, 0.8);
-}
-
-/* Текстура menu_minecraft_off.png появляется только при наведении */
-.effect-group::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('../icon/menu_minecraft_off.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0; /* Исходное состояние - невидимо */
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 1; /* Под текстом */
-}
-
-.effect-group:hover::before {
-    opacity: 1; /* Показывается при наведении */
-    transform: scale(1.2); /* Лёгкое увеличение при наведении */
-}
-
-/* Общие стили для текста */
-/* Общие стили для текста */
-.copy-text {
-    position: relative;
-    z-index: 2;
-    font-size: 18px;
-    font-family: '119-font', sans-serif; /* Шрифт Minecraft */
-    font-weight: bold;
-    color: #ffffff; /* Белый текст */
-    padding: 5px 10px;
-    text-align: center;
-    background: url('../icon/air_texture.png'); /* Текстура вокруг текста */
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6),  /* Мягкая тень */
-                 0 0 10px rgba(255, 255, 255, 0.8), 
-                 0 0 20px rgba(255, 255, 255, 0.6); /* Лёгкое белое свечение */
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
-
-/* Эффекты текста при наведении */
-.effect-group:hover .copy-text {
-    transform: scale(1.1); /* Лёгкое увеличение текста */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8),  /* Усиленная тень */
-                 0 0 15px rgba(255, 255, 255, 0.9), 
-                 0 0 25px rgba(255, 255, 255, 0.7); /* Усиленное белое свечение */
-}
-
-/* Конец настройки текста и дизайна для нижнего блока кнопок Главная, Вики, Голосование и т.д */
-
-
-
-
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .effect-column {
@@ -188,178 +83,6 @@
     .effect-group {
         width: 80%;
     }
-}
-
-/* Не изменяем саму структуру .text-box */
-/* Не изменяем саму структуру .text-box */
-.text-box {
-    position: relative;
-    flex: 1;
-    border: 2px solid #444;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: #222;
-    color: #663300;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-    transition: border-color 0.3s ease; /* Плавный переход для рамки */
-}
-
-/* Улучшаем внешний вид текста с полупрозрачным фоном */
-.text-box p {
-    background-color: rgba(0, 0, 0, 0.4); /* Легкий полупрозрачный темный фон */
-    color: white; /* Белый текст */
-    padding: 12px 18px; /* Отступы */
-    border-radius: 5px; /* Скругленные углы */
-    margin: 8px 0; /* Отступы между параграфами */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Легкая тень вокруг текста */
-    opacity: 0;
-    font-size: 18px;
-    font-family: 'Bradobrei', sans-serif; /* Шрифт */
-    line-height: 1.5;
-    text-align: center;
-    animation: fadeInText 1s forwards;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.text-box p:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.text-box p:nth-child(2) {
-    animation-delay: 1s;
-}
-
-.text-box p:nth-child(3) {
-    animation-delay: 2s;
-}
-
-.text-box p:hover {
-    background-color: rgba(0, 0, 0, 0.6); /* Немного затемняем фон на ховере */
-    color: #ffbfff;
-    transform: scale(1.05);
-    transition: all 0.3s ease;
-}
-
-/* Убираем увеличение рамки при наведении */
-.text-box:hover {
-    border-color: rgba(0, 0, 0, 0.7); /* Меняем цвет рамки, но не размеры */
-    transform: scale(1); /* Убираем увеличение блока */
-}
-
-/* Анимация появления текста */
-@keyframes fadeInText {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Стили для фона */
-.button-style {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-
-/* Effect Group */
-.effect-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #333;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-.effect-group:hover {
-    background-color: #444;
-}
-
-.icon-animation {
-    font-size: 24px;
-    color: #b35900;
-}
-
-
-/* Анимации для значков */
-.icon-animation {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.icon-animation:hover {
-    transform: rotate(360deg);
-}
-
-/* Уникальный стиль для кнопок */
-.effect-group {
-    padding: 15px;
-    margin: 10px 0;
-    background-color: #333;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s ease;
-}
-
-.effect-group:hover {
-    background-color: #444;
-}
-
-/* Пульсирующий эффект для приватов */
-.pulse {
-    animation: pulse-animation 1.5s infinite;
-}
-
-@keyframes pulse-animation {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-
-.bee-container {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    margin: 20px;
-}
-
-.bee-image {
-    width: 150px;
-    height: auto;
-    display: block;
-}
-
-/* Применяем фон только к text-box на странице site.html */
-.site-background .text-box {
-    background-image: url('../icon/spawn.png'); /* Указываем путь к изображению */
-    background-size: cover; /* Фон будет растянут на весь блок */
-    background-position: center; /* Центрируем фон */
-    background-attachment: fixed; /* Фиксируем фон при прокрутке */
-    color: white; /* Устанавливаем белый цвет текста для контраста */
-    padding: 20px; /* Добавляем отступы */
-    border-radius: 8px; /* Сглаживаем углы */
-}
-
-/* Можем также добавить эффект при наведении на text-box */
-.site-background .text-box:hover {
-    transform: scale(1.05); /* Увеличиваем блок при наведении */
-    transition: transform 0.3s ease; /* Плавный переход */
 }
 
 /* Не изменяем саму структуру .text-box */
@@ -554,7 +277,6 @@
     }
 }
 
-
 /* Общие стили для страницы */
 body {
     background-color: #181818; /* Темный фон */
@@ -588,7 +310,6 @@ body {
     border-radius: 6px;
 }
 
-
 /* Pulse Animation */
 .copy-text.pulse {
     display: inline-block; /* Это гарантирует, что элемент будет иметь размеры */
@@ -604,18 +325,6 @@ body {
     }
     100% {
         transform: scale(1);
-    }
-}
-
-/* Анимация появления текста */
-@keyframes fadeInText {
-    0% {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -769,7 +478,6 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Восстановление тени для блока */
 }
 
-
 .server-label {
     display: block; /* Разделяем "Айпи сервера" на отдельную строку */
     font-size: 16px;
@@ -781,8 +489,6 @@ body {
     font-size: 20px;
     color: #fff; /* Белый цвет для IP */
 }
-
-
 
 /* Анимация сдвига для текста */
 @keyframes textSlideIn {
@@ -804,7 +510,6 @@ body {
         opacity: 1;
     }
 }
-
 
 /* Конец настройки Сервер онлайн, айпи сервера, поддерживает версию */
 
@@ -830,7 +535,6 @@ body {
 .server-ip-text, .copy-text, .top-button, a {
     cursor: pointer; /* Изменение на курсор в виде руки */
 }
-
 
 #server-ip {
     align-items: center;

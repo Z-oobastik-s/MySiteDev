@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вики - Zoobastiks</title>
+    <meta name="description" content="Полное руководство по серверу Zoobastiks Minecraft - режимы, команды, работы и многое другое">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../Style/dark-theme.css">
+    <link rel="icon" href="../icon/logo.png" type="image/png">
+</head>
+
+<div class="nav">
+    <a href="../index.html"><i class="fas fa-home"></i> Главная</a>
+    <a href="wiki.html" class="active"><i class="fas fa-book"></i> Вики</a>
+    <a href="voting.html"><i class="fas fa-vote-yea"></i> Голосование</a>
+    <a href="commands.html"><i class="fas fa-terminal"></i> Команды</a>
+    <a href="rules.html"><i class="fas fa-gavel"></i> Правила</a>
+    <a href="news.html"><i class="fas fa-newspaper"></i> Новости</a>
+    <a href="help.html"><i class="fas fa-question-circle"></i> Помощь</a>
+    <a href="https://discord.gg/vEaCqQ7kXN"><i class="fab fa-discord"></i> Дискорд</a>
+    <a href="https://t.me/ReZoobastik"><i class="fab fa-telegram"></i> Телеграм</a>
+    <a href="id_items.html"><i class="fas fa-biohazard"></i> ☣︎</a>
+</div>
+
+<div class="container">
+    <!-- Введение -->
+    <div class="section">
+        <h2 class="section-title">О сервере Zoobastiks</h2>
+        <p>Добро пожаловать на сервер Zoobastiks! Наш сервер предлагает уникальные режимы игры и множество интересных возможностей для всех игроков. Здесь вы найдете подробную информацию о режимах, особенностях и механиках, которые сделают вашу игру незабываемой.</p>
+        
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fas fa-server"></i> Основная информация
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><strong>IP-адрес:</strong> <span class="copyable">zoobastiks.20tps.name</span></li>
+                    <li><strong>Версии:</strong> 1.12.2 - 1.21.4</li>
+                    <li><strong>Режимы:</strong> ОдинБлок, Выживание</li>
+                    <li><strong>Интеграция:</strong> Телеграм, Дискорд</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Режимы сервера -->
+    <div class="section">
+        <h2 class="section-title">Режимы игры</h2>
+        
+        <!-- ОдинБлок -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-cube"></i> Режим ОдинБлок
+            </div>
+            <div class="card-body">
+                <p>ОдинБлок — основной и наиболее популярный режим на сервере. В этом режиме каждому игроку создается отдельный остров в пустоте, где вы начинаете свой путь на единственном блоке.</p>
+                
+                <h4>Как это работает:</h4>
+                <ul>
+                    <li>Вы появляетесь на одном блоке в пустоте с набором стартовых предметов</li>
+                    <li>Ломайте блок под ногами, и он будет бесконечно восстанавливаться, каждый раз меняясь</li>
+                    <li>По мере добычи блоков вы проходите через разные фазы (всего 21 фаза)</li>
+                    <li>Каждая фаза предлагает новые блоки, мобов и возможности</li>
+                    <li>Из полученных блоков можно расширять свой остров (начальный радиус — 50 блоков)</li>
+                    <li>При каждой смерти вам выдаётся стартовый набор, чтобы вы могли продолжить игру</li>
+                </ul>
+                
+                <h4>Фазы ОдинБлока:</h4>
+                <p>Для перехода на новую фазу вам нужно добыть определенное количество блоков:</p>
+                <ul>
+                    <li>От 0 до 500 блоков — первая фаза, базовые ресурсы</li>
+                    <li>Каждая следующая фаза предлагает уникальные ресурсы и лут</li>
+                    <li>Всего 21 фаза, требуется добыть около 15000 блоков для их прохождения</li>
+                    <li>Новые фазы добавляются регулярно, так что полностью пройти режим невозможно!</li>
+                </ul>
+                
+                <div class="info-box">
+                    <p><i class="fas fa-info-circle"></i> Чтобы начать игру в режиме ОдинБлок, используйте команду <span class="copyable">/ob</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Выживание -->
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-tree"></i> Режим Выживание
+            </div>
+            <div class="card-body">
+                <p>Выживание — дополнительный режим, доступный на сервере. Это классическое выживание в Minecraft с некоторыми особенностями нашего сервера.</p>
+                
+                <h4>Особенности выживания:</h4>
+                <ul>
+                    <li>Полноценный открытый мир для исследования</li>
+                    <li>Путешествия между обычным миром, адом и эндер-миром</li>
+                    <li>Возможность строить масштабные постройки без ограничений</li>
+                    <li>Действуют все общие механики и плагины сервера</li>
+                    <li>Отсутствуют приваты и команды типа /sethome</li>
+                </ul>
+                
+                <p>Этот режим идеально подходит, когда вам хочется разнообразия после игры в ОдинБлок. Здесь вы можете свободно исследовать мир и строить всё, что пожелаете!</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Система работ -->
+    <div class="section">
+        <h2 class="section-title">Система работ</h2>
+        <p>На сервере реализована уникальная система работ, которая позволяет зарабатывать игровую валюту, выполняя различные действия. Чтобы начать работать, подойдите к НПС "Работы" на спавне или используйте команду <span class="copyable">/jobs</span>.</p>
+        
+        <div class="card mb-4">
+            <div class="card-header">Доступные профессии</div>
+            <div class="card-body">
+                <div class="job-list">
+                    <div class="job-item">
+                        <h4>Повелитель дикой природы</h4>
+                        <p>Зарабатывайте монеты за убийство пассивных животных, которые не проявляют агрессии.</p>
+                    </div>
+                    
+                    <div class="job-item">
+                        <h4>Маг рун и чар</h4>
+                        <p>Получайте монеты за каждое зачарование предметов на зачарованном столе.</p>
+                    </div>
+                    
+                    <div class="job-item">
+                        <h4>Легендарный дровосек</h4>
+                        <p>Рубите деревья и зарабатывайте монеты за каждый добытый блок древесины.</p>
+                    </div>
+                    
+                    <div class="job-item">
+                        <h4>КриптоШахтёр</h4>
+                        <p>Добывайте руду и получайте монеты за каждый добытый блок.</p>
+                    </div>
+                    
+                    <div class="job-item">
+                        <h4>Главный строитель</h4>
+                        <p>Зарабатывайте монеты за установку строительных блоков на вашем острове.</p>
+                    </div>
+                    
+                    <div class="job-item">
+                        <h4>Раскопщик</h4>
+                        <p>Копайте землю, глину и другие природные блоки, получая за это монеты.</p>
+                    </div>
+                    
+                    <div class="job-item">
+                        <h4>Мастер крафта</h4>
+                        <p>Создавайте предметы и получайте монеты за каждый скрафченный предмет.</p>
+                    </div>
+                    
+                    <div class="job-item">
+                        <h4>Удочник</h4>
+                        <p>Занимайтесь рыбалкой и зарабатывайте монеты за каждую пойманную рыбу.</p>
+                    </div>
+                    
+                    <div class="job-item">
+                        <h4>Инженер починки</h4>
+                        <p>Чините свои инструменты и снаряжение, получая за это монеты.</p>
+                    </div>
+                    
+                    <div class="job-item">
+                        <h4>Беспощадный воин</h4>
+                        <p>Сражайтесь с другими игроками и получайте монеты за PvP.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Как работает система работ</div>
+            <div class="card-body">
+                <ol>
+                    <li>Выберите профессию через меню работ (<span class="copyable">/jobs</span>) или у НПС на спавне</li>
+                    <li>Получите уведомление в чат о выбранной работе</li>
+                    <li>Выполняйте соответствующие действия для этой работы (например, убивайте животных для работы "Повелитель дикой природы")</li>
+                    <li>Следите за прогрессом в меню работ, где вы увидите текущую задачу</li>
+                    <li>После выполнения задачи вам откроется следующая, более сложная задача</li>
+                    <li>Монеты накапливаются в разделе "Выплата за работу"</li>
+                    <li>Когда накопите достаточно монет, вы можете вывести их на основной баланс</li>
+                </ol>
+                
+                <div class="info-box">
+                    <p><i class="fas fa-info-circle"></i> Для заработка 1 монеты обычно требуется выполнить несколько задач. Чем больше вы работаете, тем больше будет ваша зарплата!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Уникальные особенности -->
+    <div class="section">
+        <h2 class="section-title">Уникальные особенности сервера</h2>
+        
+        <div class="card mb-3">
+            <div class="card-header">Улучшенное зачарование</div>
+            <div class="card-body">
+                <p>На сервере доступна улучшенная система зачарований, которая позволяет создавать очень мощные предметы:</p>
+                <ul>
+                    <li>Вы можете комбинировать одинаковые чары (например, Добыча III + Добыча III = Добыча IV)</li>
+                    <li>Максимальный уровень зачарования - до 100!</li>
+                    <li>Зачарования можно получить через зачарованный стол или торгуя с жителями</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mb-3">
+            <div class="card-header">Интеграция с Telegram и Discord</div>
+            <div class="card-body">
+                <p>Сервер полностью интегрирован с каналами в Telegram и Discord:</p>
+                <ul>
+                    <li>Сообщения из игрового чата отображаются в Telegram и Discord</li>
+                    <li>Сообщения из Telegram и Discord отображаются в игре</li>
+                    <li>В Telegram доступны полезные команды:</li>
+                    <ul>
+                        <li><span class="copyable">/online</span> - просмотр онлайна сервера</li>
+                        <li><span class="copyable">/tps</span> - проверка производительности сервера</li>
+                        <li><span class="copyable">/player [ник]</span> - информация об игроке</li>
+                        <li><span class="copyable">/gender [man/girl]</span> - установка пола</li>
+                        <li><span class="copyable">/game</span> - игра "Угадай слово" с наградой в 5 монет</li>
+                    </ul>
+                    <li>Регистрация никнейма в Telegram даёт 50 монет на игровой баланс</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mb-3">
+            <div class="card-header">Взаимодействие с мобами</div>
+            <div class="card-body">
+                <p>На сервере изменены механики взаимодействия с мобами:</p>
+                <ul>
+                    <li>Вы можете подбирать в инвентарь пассивных мобов (овцы, лошади, курицы и т.д.)</li>
+                    <li>Для этого присядьте и кликните ПКМ по мобу</li>
+                    <li>Чтобы поставить моба на землю, возьмите его в руку и кликните ПКМ на блок</li>
+                    <li>Пассивные мобы могут давать отпор! Если вы ударите, например, курицу, она и другие мобы рядом будут атаковать вас, нанося 1 сердце урона за удар</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mb-3">
+            <div class="card-header">Автоматическое восстановление после взрывов</div>
+            <div class="card-body">
+                <p>Не бойтесь взрывов на сервере:</p>
+                <ul>
+                    <li>Все взрывы автоматически восстанавливаются в течение 15 секунд</li>
+                    <li>Даже если крипер взорвёт ваш сундук, весь лут в нём будет восстановлен</li>
+                    <li>Это защищает от случайного урона и неприятных ситуаций</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Другие особенности</div>
+            <div class="card-body">
+                <ul>
+                    <li>Уникальные сообщения о смерти для разнообразия игрового чата</li>
+                    <li>Полная защита вашего острова от других игроков без необходимости создавать приваты</li>
+                    <li>Возможность управлять настройками вашего острова через команду <span class="copyable">/ob settings</span></li>
+                    <li>Регулярное добавление новых фаз в режиме ОдинБлок</li>
+                    <li>Система команд, позволяющая сидеть (<span class="copyable">/sit</span>), лежать (<span class="copyable">/lay</span>) и ползать (<span class="copyable">/crawl</span>) для разнообразия геймплея</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="button-container text-center mt-4 mb-4">
+        <a href="commands.html" class="button"><i class="fas fa-terminal"></i> Команды сервера</a>
+        <a href="help.html" class="button"><i class="fas fa-question-circle"></i> Нужна помощь?</a>
+    </div>
+</div>
+
+<!-- Кнопка "Наверх" -->
+<a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- Кнопки навигации из index.html -->
+<div class="fixed-navigation fixed-nav-buttons">
+    <a href="#" class="nav-button nav-button-back">Назад</a>
+    <a href="#" class="scroll-button scroll-up" id="scroll-up">Вверх</a>
+    <a href="#" class="scroll-button scroll-down" id="scroll-down" style="display: none;">Вниз</a>
+    <a href="#" class="nav-button nav-button-forward">Вперёд</a>
+</div>
+
+<div class="footer">
+    <p>© 2025 Z-oobastik-s | <a href="https://z-oobastik-s.github.io/MySiteDev/" target="_blank">https://z-oobastik-s.github.io/MySiteDev/</a></p>
+    <p>Все материалы защищены лицензией. Использование и копирование запрещено.</p>
+    <p>Minecraft является товарным знаком Mojang Studios.</p>
+</div>
+
+<script src="../scripts/shared.js"></script>
+
+<style>
+    .job-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+    
+    .job-item {
+        padding: 1rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+        border-left: 3px solid #bb86fc;
+    }
+    
+    .job-item h4 {
+        margin-top: 0;
+        color: #03dac6;
+    }
+    
+    .copyable {
+        background-color: rgba(187, 134, 252, 0.2);
+        padding: 2px 6px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .copyable:hover {
+        background-color: rgba(187, 134, 252, 0.4);
+    }
+    
+    .info-box {
+        background-color: rgba(3, 218, 198, 0.1);
+        border-left: 3px solid #03dac6;
+        padding: 1rem;
+        border-radius: 0 6px 6px 0;
+        margin-top: 1rem;
+    }
+</style>
+</html> 

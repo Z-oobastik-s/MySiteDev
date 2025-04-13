@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const scrollUpButton = document.getElementById('scroll-up');
     const scrollDownButton = document.getElementById('scroll-down');
     const header = document.querySelector('.header-content');
-    const hiddenContent = document.querySelector('.hidden-content');
     const serverIPElement = document.getElementById('server-ip');
     const statusElement = document.getElementById("server-online-text");
     const serverAddress = serverIPElement.querySelector('.server-address'); // IP-адрес
