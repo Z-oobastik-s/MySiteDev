@@ -1,0 +1,328 @@
+/**
+ * Стили для компонента ServerStatus
+ */
+
+.server-status {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dark-theme .server-status {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Заголовок */
+.server-status__header {
+  background: linear-gradient(135deg, #2a6ad2, #1e4c99);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+}
+
+.server-status__header-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.server-status__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.server-status__actions {
+  display: flex;
+}
+
+.server-status__refresh-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.server-status__refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.server-status__refresh-btn:active {
+  transform: scale(0.95);
+}
+
+/* Содержимое */
+.server-status__content {
+  padding: 15px;
+}
+
+.server-status__server-address {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.dark-theme .server-status__server-address {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.server-status__label {
+  font-weight: 600;
+  margin-right: 5px;
+  color: #555;
+}
+
+.dark-theme .server-status__label {
+  color: #aaa;
+}
+
+.server-status__value {
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.server-status__copy-btn {
+  background: transparent;
+  border: none;
+  color: #2a6ad2;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.dark-theme .server-status__copy-btn {
+  color: #4a8aff;
+}
+
+.server-status__copy-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme .server-status__copy-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Статистика */
+.server-status__stats {
+  display: flex;
+  margin-bottom: 15px;
+  gap: 20px;
+}
+
+.server-status__stat {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 10px;
+  border-radius: 4px;
+  flex-basis: 50%;
+}
+
+.dark-theme .server-status__stat {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.server-status__player-count,
+.server-status__ping {
+  font-weight: 600;
+  color: #2a6ad2;
+}
+
+.dark-theme .server-status__player-count,
+.dark-theme .server-status__ping {
+  color: #4a8aff;
+}
+
+/* Список игроков */
+.server-status__player-list-container {
+  margin-bottom: 15px;
+}
+
+.server-status__player-list-title {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.dark-theme .server-status__player-list-title {
+  color: #eee;
+}
+
+.server-status__player-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.dark-theme .server-status__player-list {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.server-status__player-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme .server-status__player-item {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.server-status__player-item:last-child {
+  border-bottom: none;
+}
+
+.server-status__player-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  color: #555;
+}
+
+.dark-theme .server-status__player-avatar {
+  background: #333;
+  color: #aaa;
+}
+
+.server-status__player-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Сообщение об ошибке */
+.server-status__error-message {
+  background: rgba(255, 0, 0, 0.1);
+  border-left: 4px solid #ff3b30;
+  padding: 10px;
+  color: #ff3b30;
+  margin-bottom: 15px;
+  border-radius: 0 4px 4px 0;
+}
+
+.dark-theme .server-status__error-message {
+  background: rgba(255, 59, 48, 0.2);
+  color: #ff6b60;
+}
+
+/* Статусы */
+.server-status--online .server-status__header {
+  background: linear-gradient(135deg, #34c759, #28a745);
+}
+
+.server-status--offline .server-status__header {
+  background: linear-gradient(135deg, #ff3b30, #dc3545);
+}
+
+.server-status--error .server-status__header {
+  background: linear-gradient(135deg, #ff9500, #fd7e14);
+}
+
+.server-status--loading .server-status__header {
+  background: linear-gradient(135deg, #5856d6, #4638c2);
+}
+
+/* Версия сервера */
+.server-status__server-version {
+  margin-bottom: 15px;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.dark-theme .server-status__server-version {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.server-status__version-value {
+  font-weight: 500;
+}
+
+/* Футер */
+.server-status__footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+  font-size: 12px;
+  color: #777;
+  text-align: right;
+}
+
+.dark-theme .server-status__footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+  color: #999;
+}
+
+/* Анимации */
+.server-status__spin {
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Уведомление о копировании */
+.server-status__notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.server-status__notification--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .server-status__stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .server-status__player-list {
+    max-height: 150px;
+  }
+  
+  .server-status__title {
+    font-size: 16px;
+  }
+  
+  .server-status__header-icon {
+    font-size: 20px;
+  }
+} 
