@@ -1,0 +1,557 @@
+/* Подключаем шрифт ZnikomitNo25 */
+@font-face {
+    font-family: 'ZnikomitNo25'; /* Имя шрифта */
+    src: url('../Founts/ZnikomitNo25.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: '119-font'; /* Имя шрифта */
+    src: url('../Founts/119-font.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CasperBoldItalic'; /* Имя шрифта */
+    src: url('../Founts/CasperBoldItalic.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alexander'; /* Имя шрифта */
+    src: url('../Founts/Alexander.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bradobrei'; /* Имя шрифта */
+    src: url('../Founts/Bradobrei.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Minecrafter-MA3Dw'; /* Имя шрифта */
+    src: url('../Founts/Minecrafter-MA3Dw.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bee-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px;
+}
+
+.bee-image {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+/* Применяем фон только к text-box на странице site.html */
+.site-background .text-box {
+    background-image: url('../icon/spawn.png'); /* Указываем путь к изображению */
+    background-size: cover; /* Фон будет растянут на весь блок */
+    background-position: center; /* Центрируем фон */
+    background-attachment: fixed; /* Фиксируем фон при прокрутке */
+    color: white; /* Устанавливаем белый цвет текста для контраста */
+    padding: 20px; /* Добавляем отступы */
+    border-radius: 8px; /* Сглаживаем углы */
+}
+
+/* Можем также добавить эффект при наведении на text-box */
+.site-background .text-box:hover {
+    transform: scale(1.05); /* Увеличиваем блок при наведении */
+    transition: transform 0.3s ease; /* Плавный переход */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .effect-column {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .effect-group {
+        width: 80%;
+    }
+}
+
+/* Не изменяем саму структуру .text-box */
+.text-box {
+    position: relative;
+    flex: 1;
+    border: 2px solid #444;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #222;
+    color: #663300;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: border-color 0.3s ease; /* Плавный переход для рамки */
+}
+
+/* Улучшаем внешний вид текста с полупрозрачным фоном */
+.text-box p {
+    background-color: rgba(0, 0, 0, 0.4); /* Легкий полупрозрачный темный фон */
+    color: white; /* Белый текст */
+    padding: 12px 18px; /* Отступы */
+    border-radius: 5px; /* Скругленные углы */
+    margin: 8px 0; /* Отступы между параграфами */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* Легкая тень вокруг текста */
+    opacity: 0;
+    font-size: 18px;
+    font-family: 'Bradobrei', sans-serif; /* Шрифт */
+    line-height: 1.5;
+    text-align: center;
+    animation: fadeInText 1s forwards;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.text-box p:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.text-box p:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.text-box p:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.text-box p:hover {
+    background-color: rgba(0, 0, 0, 0.6); /* Немного затемняем фон на ховере */
+    color: #ffbfff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Убираем увеличение рамки при наведении */
+.text-box:hover {
+    border-color: rgba(0, 0, 0, 0.7); /* Меняем цвет рамки, но не размеры */
+    transform: scale(1); /* Убираем увеличение блока */
+}
+
+/* Анимация появления текста */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Стили для фона */
+.button-style {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Жесткое ограничение на изменение размера при ховере */
+.text-box:hover {
+    border-color: rgba(0, 0, 0, 0.7); /* Цвет рамки */
+    transform: none !important; /* Запрещаем любые изменения размера */
+}
+/* Header */
+.header-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-image: url('../icon/air_texture.png'); /* Убедитесь, что ваш фон задан здесь */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 10px 0;
+    z-index: 10000; /* Увеличиваем z-index для гарантированного отображения */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5); /* Прозрачность фона */
+    transition: background-color 0.3s ease;
+}
+
+/* Навигация */
+.center-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative; /* Убедитесь, что навигация будет правильно позиционироваться */
+    z-index: 10001; /* Делаем так, чтобы навигация была поверх других элементов */
+}
+
+.top-button {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.top-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+}
+/* Стили для кнопок */
+/* Меньшие кнопки с темно-серым градиентом */
+
+.nav-button, .scroll-button {
+    background: linear-gradient(135deg, #2c2c2c, #4d4d4d); /* Градиент от темного к более светло-серому */
+    color: #fff; /* Белый текст */
+    padding: 8px 12px; /* Уменьшенные отступы */
+    border-radius: 20px; /* Закругленные края */
+    text-transform: uppercase; /* Текст в верхнем регистре */
+    font-family: 'Bradobrei', sans-serif; /* Шрифт из вашего набора */
+    font-size: 10px; /* Меньший текст */
+    font-weight: bold; /* Жирный текст */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Полупрозрачная рамка */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Легкий объемный эффект */
+    cursor: pointer;
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* Эффект при наведении */
+.nav-button:hover, .scroll-button:hover {
+    background: linear-gradient(135deg, #3d3d3d, #5c5c5c); /* Градиент становится чуть светлее */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Усиленный эффект тени */
+    transform: scale(1.05); /* Легкое увеличение */
+}
+
+/* Специальные эффекты при нажатии */
+.nav-button:active, .scroll-button:active {
+    transform: scale(0.95); /* Небольшое уменьшение кнопки */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Уменьшение тени */
+    background: linear-gradient(135deg, #1f1f1f, #3a3a3a); /* Более темный градиент */
+}
+
+/* Для кнопок "Вверх" и "Вниз" */
+.scroll-button#scroll-up, .scroll-button#scroll-down {
+    font-size: 10px; /* Уменьшенный текст */
+    padding: 8px 12px; /* Оптимизированный размер */
+    background: linear-gradient(135deg, #2a2a2a, #424242); /* Более мягкий серый градиент */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая рамка */
+}
+
+/* Общие стили для всей навигации */
+.fixed-navigation {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px; /* Пространство между кнопками */
+    z-index: 1000;
+    animation: slideUp 1s ease-out; /* Эффект плавного появления */
+}
+
+/* Анимация появления */
+@keyframes slideUp {
+    from {
+        transform: translateY(30px) translateX(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) translateX(-50%);
+        opacity: 1;
+    }
+}
+
+/* Общие стили для страницы */
+body {
+    background-color: #181818; /* Темный фон */
+    background-image: url('../icon/background_star.jpg'); /* Замените на путь к вашему фону */
+    background-size: cover; /* Фон будет покрывать всю страницу */
+    background-position: center; /* Центрирование фона */
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Кастомный стиль полосы прокрутки */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ffdd00, #ff7700);
+    border-radius: 6px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ff5500, #ff2200);
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 6px;
+}
+
+/* Pulse Animation */
+.copy-text.pulse {
+    display: inline-block; /* Это гарантирует, что элемент будет иметь размеры */
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Добавление отступа от шапки для всех блоков */
+body {
+    padding-top: 60px; /* Подберите значение для нужного отступа (например, 60px) */
+}
+
+/* Стили для контейнера с информацией о сервере */
+/* Начало настройки Сервер онлайн, айпи сервера, поддерживает версию */
+
+.server-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 100px auto 0 auto;
+    padding: 30px;
+    border: 20px solid transparent;
+    border-radius: 15px;
+    background: url('../icon/background_zoobastiks.jpg') no-repeat center center, rgba(34, 34, 34, 0.8);
+    background-size: cover;
+    background-clip: padding-box;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+/* Сдвигаем все содержимое внутри контейнера вниз на 170px */
+.server-info-container > * {
+    transform: translateY(-170px); /* Сдвигаем все элементы на 170px вниз */
+}
+
+/* Отступы для блока кнопок и картинок */
+/* Начало Настройки для изображений с големами и их дизайном */
+.server-image-left,
+.server-image-right {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%) translateY(240px);
+}
+
+.server-image-left {
+    left: 50px; /* Увеличен отступ для равновесия */
+}
+
+.server-image-right {
+    right: 50px; /* Увеличен отступ для симметрии */
+}
+
+/* Конец настройки для изображений с големами и их дизайном */
+
+/* Отдельные стили для блока с информацией */
+.server-info-box, .server-status-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background: url('../icon/background_star.jpg') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    margin: 220px 10px; /* Уменьшен отступ сверху */
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 0.6s forwards;
+    width: 250px; /* Устанавливаем одинаковую ширину для обоих блоков */
+    height: 200; /* Устанавливаем одинаковую высоту для обоих блоков */
+}
+
+/* Появление блока с информацией */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Убираем трансформацию при наведении */
+.server-info-box:hover, .server-status-box:hover {
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    background: url('../icon/background_zoobastiks_2.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Анимация для текста */
+.server-online-text {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 20px; /* Дополнительный отступ сверху для текста */
+    animation: textSlideIn 1s ease-out;
+    padding: 10px 15px; /* Добавляем внутренние отступы для рамки */
+    border-radius: 10px; /* Скругляем углы рамки */
+    background-color: rgba(0, 0, 0, 0.8); /* Прозрачная темная рамка */
+}
+
+.server-info-box-content {
+    text-align: center; /* Центрируем содержимое */
+}
+
+/* Стили для текста "Поддерживает версию" */
+.server-version {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Тень для текста */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Тень для блока */
+    border: 2px solid rgba(0, 0, 0, 0.8); /* Темная рамка */
+    padding: 10px 15px; /* Отступы для текста */
+    border-radius: 8px; /* Скругленные углы */
+    background-color: rgba(0, 0, 0, 0.7); /* Темный фон */
+    margin-bottom: 10px; /* Добавляем небольшой отступ снизу для отделения */
+}
+
+/* Стили для версии, чтобы добавлять рамку и тень */
+.server-version:last-child {
+    background-color: rgba(0, 0, 0, 0.8); /* Фон для последнего параграфа (версия сервера) */
+    border: 2px solid rgba(0, 0, 0, 0.9); /* Темная рамка для последнего текста */
+    padding: 10px 15px; /* Отступы для текста */
+    border-radius: 8px; /* Скругленные углы */
+}
+
+/* Стили для кнопок Айпи сервера и Поддерживает сервер */
+.server-ip-text, .server-online-text {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Восстанавливаем тень для текста */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* Добавляем тень для кнопок */
+    border: 2px solid rgba(0, 0, 0, 0.8); /* Добавляем темную рамку вокруг текста */
+    padding: 10px 15px; /* Отступы для более четкой рамки */
+    border-radius: 8px; /* Скругляем углы рамки */
+    background-color: rgba(0, 0, 0, 0.7); /* Добавляем темный фон, чтобы текст был видим */
+}
+
+/* Стили для кнопки айпи сервера при наведении */
+.server-ip-text:hover, .server-online-text:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Темный фон при наведении */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8); /* Увеличиваем тень при наведении */
+    cursor: pointer; /* Добавляем курсор "рука" */
+}
+
+/* Стиль для блока с информацией о сервере */
+.server-info-box, .server-status-box {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Восстановление тени для блока */
+}
+
+.server-label {
+    display: block; /* Разделяем "Айпи сервера" на отдельную строку */
+    font-size: 16px;
+    color: #FF8C00; /* Оранжевый цвет для метки */
+}
+
+.server-address {
+    display: block; /* Разделяем IP-адрес на отдельную строку */
+    font-size: 20px;
+    color: #fff; /* Белый цвет для IP */
+}
+
+/* Анимация сдвига для текста */
+@keyframes textSlideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Конец настройки Сервер онлайн, айпи сервера, поддерживает версию */
+
+/* Запрещаем перетаскивание всех изображений на странице */
+img {
+    -webkit-user-drag: none;  /* Для WebKit браузеров */
+    user-drag: none;          /* Для остальных браузеров */
+}
+
+/* Запрещаем копирование текста на всей странице */
+body {
+    -webkit-user-select: none; /* Для WebKit браузеров */
+    user-select: none;         /* Для остальных браузеров */
+}
+
+/* Разрешаем копирование только для определённых элементов */
+.allow-copy {
+    -webkit-user-select: text; /* Разрешаем копирование текста */
+    user-select: text;         /* Разрешаем копирование текста */
+}
+
+/* Применяем курсор "рука" для текстов, которые могут быть кликабельными */
+.server-ip-text, .copy-text, .top-button, a {
+    cursor: pointer; /* Изменение на курсор в виде руки */
+}
+
+#server-ip {
+    align-items: center;
+    cursor: pointer; /* Указываем, что текст кликабельный */
+}
+
+#server-ip .server-label {
+    margin-right: 5px;
+}
+
+#server-ip .server-address {
+    font-weight: bold;
+    color: #2db300; /* Оранжевый цвет как у вас было */
+    transition: color 0.3s ease;
+}
+
+#server-ip .server-address:hover {
+    color: #ffbb33; /* Цвет при наведении */
+}
+
