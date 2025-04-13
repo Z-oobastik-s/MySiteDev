@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#121212">
+    <meta name="theme-color" content="#0a0a0f">
     <title>Zoobastiks - Minecraft Server 2025</title>
     <meta name="description" content="Современный сервер Minecraft с уникальными возможностями и комьюнити">
     
     <!-- Preload критических ресурсов -->
-    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="css/dark-theme.css" as="style">
     <link rel="preload" href="js/app.js" as="script" type="module">
     <link rel="preload" href="Founts/Minecrafter-MA3Dw.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="icon/background_zoobastiks.jpg" as="image">
     
     <!-- Favicon и иконки -->
     <link rel="icon" href="icon/logo.png" type="image/png">
@@ -19,13 +20,13 @@
     <!-- Critical CSS inline для быстрой отрисовки -->
     <style>
         :root {
-            --primary: #8c52ff;
-            --secondary: #5eead4;
-            --accent: #f97316;
-            --dark: #121212;
-            --darker: #0a0a0a;
-            --light: #f8fafc;
-            --success: #22c55e;
+            --primary: #5d4ff0;
+            --primary-light: #7e71ff;
+            --primary-dark: #4935d2;
+            --dark: #0a0a0f;
+            --darker: #050508;
+            --light: #e0e0f0;
+            --success: #18b566;
             --error: #ef4444;
             --warning: #eab308;
         }
@@ -51,6 +52,24 @@
             flex-direction: column;
             opacity: 0;
             transition: opacity 0.3s ease;
+            background-image: url('icon/background_zoobastiks.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--darker);
+            opacity: 0.85;
+            z-index: -1;
         }
         
         .loader {
@@ -108,7 +127,7 @@
     </style>
     
     <!-- Основные стили -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
     <link rel="stylesheet" href="Style/server-status.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -116,16 +135,16 @@
     <!-- Лоадер -->
     <div class="loader" id="loader">
         <div class="loader__cube">
-            <div class="loader__cube-face" style="background: #8c52ff; transform: translateZ(30px);"></div>
-            <div class="loader__cube-face" style="background: #5eead4; transform: rotateY(180deg) translateZ(30px);"></div>
-            <div class="loader__cube-face" style="background: #f97316; transform: rotateY(90deg) translateZ(30px);"></div>
-            <div class="loader__cube-face" style="background: #22c55e; transform: rotateY(-90deg) translateZ(30px);"></div>
+            <div class="loader__cube-face" style="background: #5d4ff0; transform: translateZ(30px);"></div>
+            <div class="loader__cube-face" style="background: #38b2ac; transform: rotateY(180deg) translateZ(30px);"></div>
+            <div class="loader__cube-face" style="background: #e05a00; transform: rotateY(90deg) translateZ(30px);"></div>
+            <div class="loader__cube-face" style="background: #18b566; transform: rotateY(-90deg) translateZ(30px);"></div>
             <div class="loader__cube-face" style="background: #ef4444; transform: rotateX(90deg) translateZ(30px);"></div>
             <div class="loader__cube-face" style="background: #0ea5e9; transform: rotateX(-90deg) translateZ(30px);"></div>
         </div>
     </div>
 
-    <!-- Контейнер приложения - будет заполнен JavaScript -->
+    <!-- Контейнер приложения -->
     <div id="app">
         <header class="header">
             <div class="container">
@@ -269,6 +288,22 @@
                         </div>
                     </div>
                 </section>
+                
+                <!-- Галерея скриншотов -->
+                <section class="gallery-section">
+                    <h2 class="section-title">Скриншоты сервера</h2>
+                    <div class="gallery">
+                        <div class="gallery__item">
+                            <img src="icon/spawn.png" alt="Спавн сервера" class="gallery__image">
+                        </div>
+                        <div class="gallery__item">
+                            <img src="icon/3.jpg" alt="Красивый вид" class="gallery__image">
+                        </div>
+                        <div class="gallery__item">
+                            <img src="icon/background_zoobastiks_2.jpg" alt="Пейзаж мира" class="gallery__image">
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
         
@@ -280,8 +315,8 @@
                         <p>Minecraft является торговой маркой Mojang Studios.</p>
                     </div>
                     <div class="footer__links">
-                        <a href="https://discord.gg/vEaCqQ7kXN" class="social-link" target="_blank"><i class="fab fa-discord"></i></a>
-                        <a href="https://t.me/ReZoobastik" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://discord.gg/vEaCqQ7kXN" class="social-link" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="https://t.me/ReZoobastik" class="social-link" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
                     </div>
                 </div>
             </div>
@@ -420,7 +455,75 @@
                 // Начальное обновление статуса
                 updateServerStatus();
             }
+            
+            // Анимации при скролле
+            const animateElements = document.querySelectorAll('.feature-card, .hero__title, .hero__description, .section-title');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
         });
     </script>
+    
+    <style>
+        /* Дополнительные стили для галереи */
+        .gallery-section {
+            margin-bottom: 3rem;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery__item {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            height: 200px;
+        }
+        
+        .gallery__item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl), 0 0 15px rgba(93, 79, 240, 0.4);
+            border-color: var(--primary);
+        }
+        
+        .gallery__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .gallery__item:hover .gallery__image {
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery__item {
+                height: 150px;
+            }
+        }
+    </style>
 </body>
 </html> 
