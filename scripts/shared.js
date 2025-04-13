@@ -77,18 +77,47 @@ function initNavigationButtons() {
     const backBtn = document.querySelector('.nav-button-back');
     const forwardBtn = document.querySelector('.nav-button-forward');
     
+    // Проверяем, не главная ли это страница (index.html)
+    const isIndexPage = window.location.pathname.includes('index.html') || 
+                        window.location.pathname.endsWith('/') ||
+                        window.location.pathname.endsWith('/MySiteDev/');
+    
     if (backBtn && forwardBtn) {
-        // Back button goes back in browser history
-        backBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            history.back();
-        });
-        
-        // Forward button goes forward in browser history
-        forwardBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            history.forward();
-        });
+        if (isIndexPage) {
+            // На главной странице (index.html) используем стандартные функции истории браузера
+            backBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                history.back();
+            });
+            
+            forwardBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                history.forward();
+            });
+        } else {
+            // На всех остальных страницах используем прокрутку
+            backBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Прокрутка на 1000px вверх или в начало страницы, если меньше 1000px от верха
+                const targetPosition = Math.max(0, window.pageYOffset - 1000);
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            });
+            
+            forwardBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Прокрутка на 1000px вниз
+                const targetPosition = window.pageYOffset + 1000;
+                // Не прокручиваем дальше конца страницы
+                const maxScroll = document.body.scrollHeight - window.innerHeight;
+                window.scrollTo({
+                    top: Math.min(targetPosition, maxScroll),
+                    behavior: 'smooth'
+                });
+            });
+        }
     }
 }
 
