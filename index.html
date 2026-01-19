@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoobastiks</title>
+    <meta name="description" content="Powered by Zoobastiks">
+    <link href="Style/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="icon/logo.png" type="image/png">
+</head>
+<body>
+
+    <!-- Заголовок страницы (Header Section) -->
+    <div class="bee-container site-background header-section">
+        <img src="icon/bee.png" alt="Пчела" class="bee-image header-bee-image">
+        <div class="text-box header-text-box">
+            <p>Всё, что ты любишь в Minecraft, и немного больше.</p>
+            <p>Ты думаешь, что видел всё? Думаешь, обычный Minecraft тебя ничем не удивит? А вот и нет!</p>
+            <p>Zoobastiks — это не просто сервер, это целая вселенная возможностей, где каждая минута может стать началом чего-то эпического.</p>
+        </div>
+    </div>
+
+    <div class="bee-container reverse-layout site-background header-section reverse-layout">
+        <div class="text-box header-text-box">
+            <p>Ты готов к новым вызовам?</p>
+            <p>Присоединяйся к Zoobastiks и испытай свои силы в самых невероятных приключениях.</p>
+            <p>Огромные миры, захватывающие события и дружная комьюнити ждут тебя прямо сейчас!</p>
+        </div>
+        <img src="icon/ravager.png" alt="Картинка" class="bee-image header-image-right">
+    </div>
+
+<!-- Информация о сервере (Server Info Section) -->
+<div class="server-info-container server-info-section">
+    <img src="icon/logo_photo_left_right.png" alt="Фото слева" class="server-image-left server-image">
+    <div class="server-status-box server-status-section">
+        <div class="server-status-content">
+            <img src="icon/logo.png" alt="Иконка слева" class="server-icon-left">
+            <p id="server-online-text" class="server-online-text">Онлайн: Загрузка...</p>
+        </div>
+    </div>
+    <div class="server-info-box server-info-box-section">
+<div class="server-info-box-content">
+    <p id="server-ip" class="server-ip-text" onclick="copyServerIP()">
+        <span class="server-label">Айпи сервера</span>
+        <span class="server-address">zoobastiks.20tps.name</span>
+    </p>
+    <p class="server-version">Поддерживает версию</p>
+    <p class="server-version">1.12.2 - 1.21.11</p>
+</div>
+
+
+
+    </div>
+    <img src="icon/logo_photo_left_right.png" alt="Фото справа" class="server-image-right server-image">
+</div>
+
+    <!-- Навигационное меню (Navigation Menu Section) -->
+    <header class="header-content navigation-section">
+        <nav class="center-nav center-navigation">
+            <img src="icon/logo.png" alt="Logo" width="40" height="40" class="logo-nav">
+            <a href="index.html" class="top-button navigation-button">Главная</a>
+            <a href="pages/wiki.html" class="top-button navigation-button">Вики</a>
+            <a href="pages/voting.html" class="top-button navigation-button">ГОЛОСОВАНИЕ</a>
+            <a href="pages/commands.html" class="top-button navigation-button">Команды</a>
+            <a href="pages/rules.html" class="top-button navigation-button">Правила</a>
+            <a href="pages/news.html" class="top-button navigation-button">Новости</a>
+            <a href="pages/help.html" class="top-button navigation-button">Помощь</a>
+            <a href="https://discord.gg/vEaCqQ7kXN" class="top-button navigation-button">Дискорд</a>
+            <a href="https://t.me/ReZoobastik" class="top-button navigation-button">Телеграм</a>
+            <a href="pages/id_items.html" class="top-button navigation-button">☣︎</a>
+        </nav>
+    </header>
+
+    <!-- Кнопки навигации (Navigation Buttons Section) -->
+    <div class="fixed-navigation fixed-nav-buttons">
+        <a href="#" class="nav-button nav-button-back">Назад</a>
+        <a href="#" class="scroll-button scroll-up" id="scroll-up">Вверх</a>
+        <a href="#" class="scroll-button scroll-down" id="scroll-down" style="display: none;">Вниз</a>
+        <a href="#" class="nav-button nav-button-forward">Вперёд</a>
+    </div>
+
+    <!-- Подключение скрипта -->
+    <script src="script.js"></script>
+</body>
+</html>

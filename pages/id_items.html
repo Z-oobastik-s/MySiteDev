@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID зачарований и эффектов - Zoobastiks</title>
+    <meta name="description" content="ID зачарований и эффектов в Minecraft">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../Style/dark-theme.css">
+    <link rel="icon" href="../icon/logo.png" type="image/png">
+    <style>
+        .id-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .tab-button {
+            padding: 15px 30px;
+            background-color: #2d2d2d;
+            border: none;
+            color: #e0e0e0;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            border-top: 2px solid transparent;
+        }
+        
+        .tab-button:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+        
+        .tab-button:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tab-button:hover {
+            background-color: #3d3d3d;
+        }
+        
+        .tab-button.active {
+            background-color: #3d3d3d;
+            border-top: 2px solid #bb86fc;
+            color: #bb86fc;
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Стили для таблицы */
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .items-table th {
+            background-color: #2d2d2d;
+            color: #bb86fc;
+            text-align: left;
+            padding: 15px 20px;
+            font-size: 18px;
+            border-bottom: 2px solid #444;
+        }
+        
+        .items-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #333;
+            transition: background-color 0.3s;
+            background-color: #1e1e1e;
+        }
+        
+        .items-table tr:hover td {
+            background-color: #252525;
+        }
+        
+        .items-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .items-table img {
+            width: 32px;
+            height: 32px;
+            pointer-events: none;
+        }
+        
+        .copy-text {
+            cursor: pointer;
+            color: #03dac6;
+            transition: color 0.3s;
+        }
+        
+        .copy-text:hover {
+            color: #bb86fc;
+        }
+        
+        .max-level {
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .item-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .search-bar {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 50px;
+            border: none;
+            background-color: #2d2d2d;
+            color: #e0e0e0;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            padding-left: 50px;
+        }
+        
+        .search-bar input:focus {
+            outline: none;
+            background-color: #3d3d3d;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        .search-bar i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            transition: color 0.3s;
+        }
+        
+        .search-bar input:focus + i {
+            color: #03dac6;
+        }
+        
+        /* Эффекты */
+        .effect-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .effect-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .effect-group:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .effect-group img {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #444;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+
+<!-- Навигационное меню -->
+<div class="nav">
+    <a href="../index.html"><i class="fas fa-home"></i> Главная</a>
+    <a href="wiki.html"><i class="fas fa-book"></i> Вики</a>
+    <a href="voting.html"><i class="fas fa-vote-yea"></i> Голосование</a>
+    <a href="commands.html"><i class="fas fa-terminal"></i> Команды</a>
+    <a href="rules.html"><i class="fas fa-gavel"></i> Правила</a>
+    <a href="news.html"><i class="fas fa-newspaper"></i> Новости</a>
+    <a href="help.html"><i class="fas fa-question-circle"></i> Помощь</a>
+    <a href="https://discord.gg/vEaCqQ7kXN"><i class="fab fa-discord"></i> Дискорд</a>
+    <a href="https://t.me/ReZoobastik"><i class="fab fa-telegram"></i> Телеграм</a>
+    <a href="id_items.html" class="active"><i class="fas fa-biohazard"></i> ☣︎</a>
+</div>
+
+<!-- Основной контент ID предметов -->
+<div class="container">
+    <div class="section">
+        <h2 class="section-title">ID зачарований и эффектов в Minecraft</h2>
+        <p>Удобная справочная информация для командных блоков и консольных команд</p>
+        
+        <!-- Вкладки для переключения между зачарованиями и эффектами -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="enchantments">Зачарования</button>
+            <button class="tab-button" data-tab="effects">Эффекты</button>
+        </div>
+        
+        <!-- Поиск -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Поиск...">
+            <i class="fas fa-search"></i>
+        </div>
+        
+        <!-- Контент вкладки "Зачарования" -->
+        <div id="enchantments" class="tab-content active">
+            <table class="items-table" id="enchantmentsTable">
+                <thead>
+                    <tr>
+                        <th>Зачарование</th>
+                        <th>ID</th>
+                        <th>Предметы</th>
+                        <th>Макс. Ур.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Разящий клинок</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">sweeping_edge</span></td>
+                        <td><img src="../icon/sword.png" alt="Меч" draggable="false"></td>
+                        <td class="max-level">3</td>
+                    </tr>
+                    <tr>
+                        <td>Отбрасывание</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">knockback</span></td>
+                        <td><img src="../icon/sword.png" alt="Меч" draggable="false"></td>
+                        <td class="max-level">2</td>
+                    </tr>
+                    <tr>
+                        <td>Острота</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">sharpness</span></td>
+                        <td><img src="../icon/sword.png" alt="Меч" draggable="false"></td>
+                        <td class="max-level">5</td>
+                    </tr>
+                    <tr>
+                        <td>Небесная кара</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">smite</span></td>
+                        <td><img src="../icon/sword.png" alt="Меч" draggable="false"></td>
+                        <td class="max-level">5</td>
+                    </tr>
+                    <tr>
+                        <td>Эффективность</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">efficiency</span></td>
+                        <td class="item-icons">
+                            <img src="../icon/pickaxe.png" alt="Кирка" draggable="false">
+                            <img src="../icon/axe.png" alt="Топор" draggable="false">
+                            <img src="../icon/shovel.png" alt="Лопата" draggable="false">
+                            <img src="../icon/hoe.png" alt="Мотыга" draggable="false">
+                        </td>
+                        <td class="max-level">5</td>
+                    </tr>
+                    <tr>
+                        <td>Шёлковое касание</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">silk_touch</span></td>
+                        <td class="item-icons">
+                            <img src="../icon/pickaxe.png" alt="Кирка" draggable="false">
+                            <img src="../icon/axe.png" alt="Топор" draggable="false">
+                            <img src="../icon/shovel.png" alt="Лопата" draggable="false">
+                            <img src="../icon/hoe.png" alt="Мотыга" draggable="false">
+                        </td>
+                        <td class="max-level">1</td>
+                    </tr>
+                    <tr>
+                        <td>Защита</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">protection</span></td>
+                        <td class="item-icons">
+                            <img src="../icon/helmet.png" alt="Шлем" draggable="false">
+                            <img src="../icon/chestplate.png" alt="Нагрудник" draggable="false">
+                            <img src="../icon/leggins.png" alt="Поножи" draggable="false">
+                            <img src="../icon/boots.png" alt="Ботинки" draggable="false">
+                        </td>
+                        <td class="max-level">4</td>
+                    </tr>
+                    <tr>
+                        <td>Подводное дыхание</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">respiration</span></td>
+                        <td><img src="../icon/helmet.png" alt="Шлем" draggable="false"></td>
+                        <td class="max-level">3</td>
+                    </tr>
+                    <tr>
+                        <td>Шипы</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">thorns</span></td>
+                        <td><img src="../icon/chestplate.png" alt="Нагрудник" draggable="false"></td>
+                        <td class="max-level">3</td>
+                    </tr>
+                    <tr>
+                        <td>Бесконечность</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">infinity</span></td>
+                        <td><img src="../icon/bow.png" alt="Лук" draggable="false"></td>
+                        <td class="max-level">1</td>
+                    </tr>
+                    <tr>
+                        <td>Пробитие</td>
+                        <td><span class="copy-text" onclick="copyToClipboard(this)">breach</span></td>
+                        <td><img src="../icon/mace.png" alt="Булава" draggable="false"></td>
+                        <td class="max-level">4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Контент вкладки "Эффекты" -->
+        <div id="effects" class="tab-content">
+            <div class="effect-container">
+                <!-- Положительные эффекты -->
+                <h3>Положительные эффекты</h3>
+                <div class="effect-column">
+                    <div class="effect-group">
+                        <img src="../iconEffect/1.png" alt="Скорость" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Скорость">Скорость</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="speed">(speed)</span>
+                    </div>
+                    <div class="effect-group">
+                        <img src="../iconEffect/3.png" alt="Спешка" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Спешка">Спешка</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="haste">(haste)</span>
+                    </div>
+                    <div class="effect-group">
+                        <img src="../iconEffect/6.png" alt="Исцеление" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Исцеление">Исцеление</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="healing">(healing)</span>
+                    </div>
+                    <div class="effect-group">
+                        <img src="../iconEffect/8.png" alt="Прыгучесть" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Прыгучесть">Прыгучесть</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="jump_boost">(jump_boost)</span>
+                    </div>
+                    <div class="effect-group">
+                        <img src="../iconEffect/10.png" alt="Регенерация" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Регенерация">Регенерация</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="regeneration">(regeneration)</span>
+                    </div>
+                    <div class="effect-group">
+                        <img src="../iconEffect/11.png" alt="Сопротивление" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Сопротивление">Сопротивление</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="resistance">(resistance)</span>
+                    </div>
+                </div>
+                
+                <div class="divider"></div>
+                
+                <!-- Отрицательные эффекты -->
+                <h3>Отрицательные эффекты</h3>
+                <div class="effect-column">
+                    <div class="effect-group">
+                        <img src="../iconEffect/2.png" alt="Замедление" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Замедление">Замедление</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="slowness">(slowness)</span>
+                    </div>
+                    <div class="effect-group">
+                        <img src="../iconEffect/4.png" alt="Утомление" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Утомление">Утомление</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="mining_fatigue">(mining_fatigue)</span>
+                    </div>
+                    <div class="effect-group">
+                        <img src="../iconEffect/7.png" alt="Моментальный урон" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Моментальный урон">Моментальный урон</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="instant_damage">(instant_damage)</span>
+                    </div>
+                    <div class="effect-group">
+                        <img src="../iconEffect/9.png" alt="Тошнота" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Тошнота">Тошнота</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="nausea">(nausea)</span>
+                    </div>
+                    <div class="effect-group">
+                        <img src="../iconEffect/15.png" alt="Слепота" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Слепота">Слепота</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="blindness">(blindness)</span>
+                    </div>
+                    <div class="effect-group">
+                        <img src="../iconEffect/19.png" alt="Отравление" class="icon-animation">
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="Отравление">Отравление</span>
+                        <span class="copy-text" onclick="copyToClipboard(this)" data-copy="poison">(poison)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="button-container text-center mt-4 mb-4">
+        <a href="../index.html" class="button"><i class="fas fa-home"></i> На Главную</a>
+        <a href="help.html" class="button"><i class="fas fa-question-circle"></i> Нужна помощь?</a>
+    </div>
+</div>
+
+<!-- Кнопка "Наверх" -->
+<a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- Кнопки навигации -->
+<div class="fixed-navigation fixed-nav-buttons">
+    <a href="#" class="nav-button nav-button-back">Назад</a>
+    <a href="#" class="scroll-button scroll-up" id="scroll-up">Вверх</a>
+    <a href="#" class="scroll-button scroll-down" id="scroll-down" style="display: none;">Вниз</a>
+    <a href="#" class="nav-button nav-button-forward">Вперёд</a>
+</div>
+
+<div class="footer">
+    <p>© 2025 Z-oobastik-s | <a href="https://z-oobastik-s.github.io/MySiteDev/" target="_blank">https://z-oobastik-s.github.io/MySiteDev/</a></p>
+    <p>Все материалы защищены лицензией. Использование и копирование запрещено.</p>
+    <p>Minecraft является товарным знаком Mojang Studios.</p>
+</div>
+
+<script src="../scripts/shared.js"></script>
+
+<script>
+    // Переключение между вкладками
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Убираем активный класс со всех кнопок и контента
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Добавляем активный класс на нажатую кнопку и соответствующий контент
+            this.classList.add('active');
+            document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+        });
+    });
+    
+    // Функционал поиска
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        
+        // Поиск в таблице зачарований
+        if (document.getElementById('enchantments').classList.contains('active')) {
+            const rows = document.querySelectorAll('#enchantmentsTable tbody tr');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        }
+        
+        // Поиск в эффектах
+        if (document.getElementById('effects').classList.contains('active')) {
+            const effects = document.querySelectorAll('.effect-group');
+            effects.forEach(effect => {
+                const text = effect.textContent.toLowerCase();
+                effect.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        }
+    });
+    
+    // Функционал копирования
+    function copyToClipboard(element) {
+        const text = element.textContent || element.getAttribute('data-copy');
+        navigator.clipboard.writeText(text)
+            .then(() => {
+                const originalText = element.textContent;
+                element.textContent = 'Скопировано!';
+                setTimeout(() => {
+                    element.textContent = originalText;
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Ошибка при копировании', err);
+            });
+    }
+    
+    // Запрет контекстного меню и перетаскивания для изображений
+    document.addEventListener('contextmenu', (e) => {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
+    });
+    
+    document.querySelectorAll('img').forEach(img => {
+        img.setAttribute('draggable', 'false');
+    });
+</script>
+</body>
+</html> 

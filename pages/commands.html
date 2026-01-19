@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команды сервера - Zoobastiks</title>
+    <meta name="description" content="Полный список команд сервера Zoobastiks Minecraft">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../Style/dark-theme.css">
+    <link rel="icon" href="../icon/logo.png" type="image/png">
+</head>
+    
+<div class="nav">
+    <a href="../index.html"><i class="fas fa-home"></i> Главная</a>
+    <a href="wiki.html"><i class="fas fa-book"></i> Вики</a>
+    <a href="voting.html"><i class="fas fa-vote-yea"></i> Голосование</a>
+    <a href="commands.html" class="active"><i class="fas fa-terminal"></i> Команды</a>
+    <a href="rules.html"><i class="fas fa-gavel"></i> Правила</a>
+    <a href="news.html"><i class="fas fa-newspaper"></i> Новости</a>
+    <a href="help.html"><i class="fas fa-question-circle"></i> Помощь</a>
+    <a href="https://discord.gg/vEaCqQ7kXN"><i class="fab fa-discord"></i> Дискорд</a>
+    <a href="https://t.me/ReZoobastik"><i class="fab fa-telegram"></i> Телеграм</a>
+    <a href="id_items.html"><i class="fas fa-biohazard"></i> ☣︎</a>
+</div>
+    
+<div class="container">
+    <div class="section">
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="commandSearch" class="search-input" placeholder="Поиск команд...">
+        </div>
+        
+        <div class="command-filters">
+            <button class="button active" data-tag="all">Все команды</button>
+            <button class="button" data-tag="general">Общие</button>
+            <button class="button" data-tag="teleport">Телепортация</button>
+            <button class="button" data-tag="economy">Экономика</button>
+            <button class="button" data-tag="oneblock">ОдинБлок</button>
+            <button class="button" data-tag="social">Коммуникация</button>
+            <button class="button" data-tag="fun">Развлечения</button>
+            <button class="button" data-tag="restore">Восстановление</button>
+            <button class="button" data-tag="telegram">Telegram</button>
+        </div>
+    </div>
+    
+    <!-- Основные команды -->
+    <div class="section" id="general-commands">
+        <h3 class="section-title">Основные команды</h3>
+        
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table commands-table">
+                        <thead>
+                            <tr>
+                                <th>Команда</th>
+                                <th>Описание</th>
+                            </tr>
+                        </thead>
+                        <tbody class="command-list" data-category="general">
+                            <tr>
+                                <td><code>/reg [пароль]</code></td>
+                                <td>Регистрация аккаунта на сервере</td>
+                            </tr>
+                            <tr>
+                                <td><code>/l [пароль]</code></td>
+                                <td>Авторизация на сервере</td>
+                            </tr>
+                            <tr>
+                                <td><code>/changepass [старый] [новый]</code></td>
+                                <td>Сменить пароль от аккаунта</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ab toggle</code></td>
+                                <td>Отключить сообщения в чате от ботов</td>
+                            </tr>
+                            <tr>
+                                <td><code>/spawn</code></td>
+                                <td>Телепортация на спавн</td>
+                            </tr>
+                            <tr>
+                                <td><code>/suicide</code></td>
+                                <td>Самоубийство (если застряли где-то)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/help</code></td>
+                                <td>Открыть меню помощи</td>
+                            </tr>
+                            <tr>
+                                <td><code>/kit старт</code></td>
+                                <td>Получить набор предметов для начала игры</td>
+                            </tr>
+                            <tr>
+                                <td><code>/menu</code></td>
+                                <td>Открыть главное меню сервера</td>
+                            </tr>
+                            <tr>
+                                <td><code>/balance</code></td>
+                                <td>Проверить свой баланс</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Команды телепортации -->
+    <div class="section" id="teleport-commands">
+        <h3 class="section-title">Команды телепортации</h3>
+        
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table commands-table">
+                        <thead>
+                            <tr>
+                                <th>Команда</th>
+                                <th>Описание</th>
+                            </tr>
+                        </thead>
+                        <tbody class="command-list" data-category="teleport">
+                            <tr>
+                                <td><code>/tpa [никнейм]</code></td>
+                                <td>Отправить запрос на телепортацию к игроку</td>
+                            </tr>
+                            <tr>
+                                <td><code>/tpahere [никнейм]</code></td>
+                                <td>Отправить запрос на телепортацию игрока к себе</td>
+                            </tr>
+                            <tr>
+                                <td><code>/tpaccept [никнейм]</code></td>
+                                <td>Принять запрос на телепортацию</td>
+                            </tr>
+                            <tr>
+                                <td><code>/tpdeny [никнейм]</code></td>
+                                <td>Отклонить запрос на телепортацию</td>
+                            </tr>
+                            <tr>
+                                <td><code>/spawn</code></td>
+                                <td>Телепортироваться на спавн</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Команды экономики -->
+    <div class="section" id="economy-commands">
+        <h3 class="section-title">Команды экономики</h3>
+        
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table commands-table">
+                        <thead>
+                            <tr>
+                                <th>Команда</th>
+                                <th>Описание</th>
+                            </tr>
+                        </thead>
+                        <tbody class="command-list" data-category="economy">
+                            <tr>
+                                <td><code>/balance</code></td>
+                                <td>Проверить свой баланс</td>
+                            </tr>
+                            <tr>
+                                <td><code>/pay [никнейм] [сумма]</code></td>
+                                <td>Перевести монеты другому игроку</td>
+                            </tr>
+                            <tr>
+                                <td><code>/shop</code></td>
+                                <td>Открыть магазин сервера</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ah</code></td>
+                                <td>Открыть аукцион сервера</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ah sell [цена]</code></td>
+                                <td>Выставить предмет на аукцион</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ah cancel</code></td>
+                                <td>Снять с продажи свой предмет с аукциона</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ah collect</code></td>
+                                <td>Забрать просроченные предметы с аукциона</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ah amount</code></td>
+                                <td>Проверить сколько предметов вы выставили на аукцион</td>
+                            </tr>
+                            <tr>
+                                <td><code>/jobs</code></td>
+                                <td>Открыть меню работ для заработка валюты</td>
+                            </tr>
+                            <tr>
+                                <td><code>/zshop</code></td>
+                                <td>Открыть магазин улучшений и предметов</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Команды восстановления после смерти -->
+    <div class="section" id="restore-commands">
+        <h3 class="section-title">Команды восстановления после смерти</h3>
+        
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table commands-table">
+                        <thead>
+                            <tr>
+                                <th>Команда</th>
+                                <th>Описание</th>
+                            </tr>
+                        </thead>
+                        <tbody class="command-list" data-category="restore">
+                            <tr>
+                                <td><code>/dp</code></td>
+                                <td>Показать список точек смерти</td>
+                            </tr>
+                            <tr>
+                                <td><code>/dp list</code></td>
+                                <td>Показать список всех сохраненных точек смерти (до 5 последних)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/dp tp [номер]</code></td>
+                                <td>Телепортироваться на место смерти за 250 монет</td>
+                            </tr>
+                            <tr>
+                                <td><code>/dp items [номер]</code></td>
+                                <td>Восстановить все предметы с точки смерти за рассчитанную стоимость</td>
+                            </tr>
+                            <tr>
+                                <td><code>/dp preview</code></td>
+                                <td>Посмотреть стоимость восстановления текущего инвентаря</td>
+                            </tr>
+                            <tr>
+                                <td><code>/dp preview [номер]</code></td>
+                                <td>Детальная информация о конкретной точке смерти</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Команды Telegram -->
+    <div class="section" id="telegram-commands-game">
+        <h3 class="section-title">Команды Telegram (в игре)</h3>
+        
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table commands-table">
+                        <thead>
+                            <tr>
+                                <th>Команда</th>
+                                <th>Описание</th>
+                            </tr>
+                        </thead>
+                        <tbody class="command-list" data-category="telegram">
+                            <tr>
+                                <td><code>/telegram</code></td>
+                                <td>Получить ссылку на Telegram канал сервера</td>
+                            </tr>
+                            <tr>
+                                <td><code>/telegram link</code></td>
+                                <td>Получить код для регистрации в Telegram (действует 10 минут)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/telegram unlink</code></td>
+                                <td>Отвязать аккаунт от Telegram</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Команды ОдинБлока -->
+    <div class="section" id="oneblock-commands">
+        <h3 class="section-title">Команды ОдинБлока</h3>
+        
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table commands-table">
+                        <thead>
+                            <tr>
+                                <th>Команда</th>
+                                <th>Описание</th>
+                            </tr>
+                        </thead>
+                        <tbody class="command-list" data-category="oneblock">
+                            <tr>
+                                <td><code>/ob</code></td>
+                                <td>Телепортация на свой остров</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob count</code></td>
+                                <td>Посмотреть свою фазу и количество сломанных блоков</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob phases</code></td>
+                                <td>Посмотреть все фазы на сервере</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob reset</code></td>
+                                <td>Сбросить свой остров и начать заново</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob sethome [имя]</code></td>
+                                <td>Установить точку дома на острове</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob homes</code></td>
+                                <td>Посмотреть список точек дома</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob deletehome [имя]</code></td>
+                                <td>Удалить точку дома</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob setname [имя]</code></td>
+                                <td>Установить название острова</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob settings</code></td>
+                                <td>Открыть настройки острова</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob respawnBlock</code></td>
+                                <td>Восстановить блок, если он исчез</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob ban [никнейм]</code></td>
+                                <td>Забанить игрока на своем острове</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob unban [никнейм]</code></td>
+                                <td>Разбанить игрока на своем острове</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob banlist</code></td>
+                                <td>Посмотреть список забаненных игроков</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob expel [никнейм]</code></td>
+                                <td>Выгнать игрока с вашего острова</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob visit</code></td>
+                                <td>Открыть меню посещения других островов</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob visit configure</code></td>
+                                <td>Настройки посещения вашего острова</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob visit setlocation</code></td>
+                                <td>Установить точку появления для посетителей</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob likes</code></td>
+                                <td>Посмотреть/поставить лайк острову</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob near</code></td>
+                                <td>Посмотреть близлежащие острова</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob team</code></td>
+                                <td>Управление командой острова</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob team invite [никнейм]</code></td>
+                                <td>Пригласить игрока в команду острова</td>
+                            </tr>
+                            <tr>
+                                <td><code>/ob team help</code></td>
+                                <td>Посмотреть все команды для управления командой</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Команды коммуникации -->
+    <div class="section" id="social-commands">
+        <h3 class="section-title">Команды коммуникации</h3>
+        
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table commands-table">
+                        <thead>
+                            <tr>
+                                <th>Команда</th>
+                                <th>Описание</th>
+                            </tr>
+                        </thead>
+                        <tbody class="command-list" data-category="social">
+                            <tr>
+                                <td><code>/t [никнейм] [сообщение]</code></td>
+                                <td>Отправить личное сообщение игроку</td>
+                            </tr>
+                            <tr>
+                                <td><code>/tell [никнейм] [сообщение]</code></td>
+                                <td>Отправить личное сообщение игроку</td>
+                            </tr>
+                            <tr>
+                                <td><code>/r [сообщение]</code></td>
+                                <td>Ответить на последнее личное сообщение</td>
+                            </tr>
+                            <tr>
+                                <td><code>/me [действие]</code></td>
+                                <td>Отправить сообщение о своем действии</td>
+                            </tr>
+                            <tr>
+                                <td><code>/telegram</code></td>
+                                <td>Получить ссылку на Telegram канал сервера</td>
+                            </tr>
+                            <tr>
+                                <td><code>/discord</code></td>
+                                <td>Получить ссылку на Discord сервер</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Команды развлечений -->
+    <div class="section" id="fun-commands">
+        <h3 class="section-title">Команды развлечений</h3>
+        
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table commands-table">
+                        <thead>
+                            <tr>
+                                <th>Команда</th>
+                                <th>Описание</th>
+                            </tr>
+                        </thead>
+                        <tbody class="command-list" data-category="fun">
+                            <tr>
+                                <td><code>/sit</code></td>
+                                <td>Сесть на блок или на землю</td>
+                            </tr>
+                            <tr>
+                                <td><code>/lay</code></td>
+                                <td>Лечь на блок или на землю</td>
+                            </tr>
+                            <tr>
+                                <td><code>/crawl</code></td>
+                                <td>Ползти</td>
+                            </tr>
+                            <tr>
+                                <td><code>/sex [никнейм]</code></td>
+                                <td>Отправить предложение для создания ребенка с кастомными торгами</td>
+                            </tr>
+                            <tr>
+                                <td><code>/head</code></td>
+                                <td>Меню декоративных голов</td>
+                            </tr>
+                            <tr>
+                                <td><code>/itf</code></td>
+                                <td>Меню настройки рамок (невидимость или цвет)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/music</code></td>
+                                <td>Меню с музыкой (требуется ресурспак сервера)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/skin [никнейм]</code></td>
+                                <td>Установить себе скин другого игрока</td>
+                            </tr>
+                            <tr>
+                                <td><code>/skin url [ссылка]</code></td>
+                                <td>Загрузить скин по ссылке (.png)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Команды в Telegram канале -->
+    <div class="section" id="telegram-commands">
+        <h3 class="section-title">Команды в Telegram канале</h3>
+        
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table commands-table">
+                        <thead>
+                            <tr>
+                                <th>Команда</th>
+                                <th>Описание</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>/online</code></td>
+                                <td>Список игроков онлайн на сервере</td>
+                            </tr>
+                            <tr>
+                                <td><code>/tps</code></td>
+                                <td>Проверить производительность сервера (TPS)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/player [никнейм]</code></td>
+                                <td>Детальная информация об игроке (статус, здоровье, баланс, координаты и др.)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/stats [период]</code></td>
+                                <td>Статистика игроков за период (1h, 1d, 1w, 1m)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/top [период]</code></td>
+                                <td>Топ-10 игроков по времени игры за период</td>
+                            </tr>
+                            <tr>
+                                <td><code>/topbal</code></td>
+                                <td>Топ-10 игроков по балансу</td>
+                            </tr>
+                            <tr>
+                                <td><code>/gender [man/girl]</code></td>
+                                <td>Установить свой пол</td>
+                            </tr>
+                            <tr>
+                                <td><code>/game</code></td>
+                                <td>Игра "Угадай слово" с наградами от 20 до 10000+ монет</td>
+                            </tr>
+                            <tr>
+                                <td><code>/random</code></td>
+                                <td>Рулетка с ценными наградами (кулдаун 5 минут)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/menu</code></td>
+                                <td>Интерактивное меню команд в Telegram</td>
+                            </tr>
+                            <tr>
+                                <td><code>/pay [ник] [сумма]</code></td>
+                                <td>Перевести деньги другому игроку через Telegram</td>
+                            </tr>
+                            <tr>
+                                <td><code>/rep+</code> или <code>/+rep</code></td>
+                                <td>Дать положительную репутацию игроку (ответьте на его сообщение)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/rep-</code> или <code>/-rep</code></td>
+                                <td>Дать отрицательную репутацию игроку (ответьте на его сообщение)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/rep</code></td>
+                                <td>Посмотреть свою репутацию и статистику</td>
+                            </tr>
+                            <tr>
+                                <td><code>/rep @игрок</code></td>
+                                <td>Посмотреть репутацию указанного игрока</td>
+                            </tr>
+                            <tr>
+                                <td><code>/reptop</code></td>
+                                <td>Топ игроков по репутации</td>
+                            </tr>
+                            <tr>
+                                <td><code>/reprecent</code></td>
+                                <td>Последние изменения репутации</td>
+                            </tr>
+                            <tr>
+                                <td><code>/restart [время]</code></td>
+                                <td>Запланировать перезагрузку сервера (только админы)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/cancelrestart</code></td>
+                                <td>Отменить запланированный рестарт (только админы)</td>
+                            </tr>
+                            <tr>
+                                <td><code>ваш_никнейм</code></td>
+                                <td>Зарегистрировать никнейм в канале регистрации (награды: 500 монет, 20 уровней, меч)</td>
+                            </tr>
+                            <tr>
+                                <td><code>/unreg [ник]</code></td>
+                                <td>Отменить регистрацию (свой ник или чужой для админов)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="button-container text-center mt-4 mb-4">
+        <a href="../index.html" class="button"><i class="fas fa-home"></i> На Главную</a>
+        <a href="help.html" class="button"><i class="fas fa-question-circle"></i> Нужна помощь?</a>
+    </div>
+</div>
+    
+<!-- Кнопка "Наверх" -->
+<a href="#" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</a>
+    
+<!-- Кнопки навигации из index.html -->
+<div class="fixed-navigation fixed-nav-buttons">
+    <a href="#" class="nav-button nav-button-back">Назад</a>
+    <a href="#" class="scroll-button scroll-up" id="scroll-up">Вверх</a>
+    <a href="#" class="scroll-button scroll-down" id="scroll-down" style="display: none;">Вниз</a>
+    <a href="#" class="nav-button nav-button-forward">Вперёд</a>
+</div>
+    
+<div class="footer">
+    <p>© 2025 Z-oobastik-s | <a href="https://z-oobastik-s.github.io/MySiteDev/" target="_blank">https://z-oobastik-s.github.io/MySiteDev/</a></p>
+    <p>Все материалы защищены лицензией. Использование и копирование запрещено.</p>
+    <p>Minecraft является товарным знаком Mojang Studios.</p>
+</div>
+    
+<script src="../scripts/shared.js"></script>
+    
+<style>
+    .command-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .command-filters .button {
+        padding: 0.5rem 1rem;
+        opacity: 0.7;
+    }
+    
+    .command-filters .button.active {
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+    
+    .commands-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .commands-table th {
+        background-color: rgba(187, 134, 252, 0.1);
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+    
+    .commands-table td {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .commands-table tr:hover td {
+        background-color: rgba(187, 134, 252, 0.05);
+    }
+    
+    code {
+        background-color: rgba(187, 134, 252, 0.1);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        white-space: nowrap;
+    }
+</style>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.command-filters .button');
+        const sections = document.querySelectorAll('.section[id$="-commands"]');
+        
+        // Фильтрация по категориям
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tag = this.getAttribute('data-tag');
+                
+                // Активация кнопки
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                if (tag === 'all') {
+                    // Показать все секции
+                    sections.forEach(section => {
+                        section.style.display = 'block';
+                    });
+                } else {
+                    // Показать только выбранную секцию
+                    sections.forEach(section => {
+                        if (section.id === tag + '-commands') {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Поиск команд
+        const searchInput = document.getElementById('commandSearch');
+        const commandRows = document.querySelectorAll('.command-list tr');
+        
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            // Сначала показываем все секции
+            sections.forEach(section => {
+                section.style.display = 'block';
+            });
+            
+            // Затем фильтруем строки команд
+            let visibleSections = new Set();
+            
+            commandRows.forEach(row => {
+                const commandText = row.querySelector('code').textContent.toLowerCase();
+                const descriptionText = row.querySelectorAll('td')[1].textContent.toLowerCase();
+                const categoryName = row.closest('.command-list').getAttribute('data-category');
+                
+                if (commandText.includes(searchTerm) || descriptionText.includes(searchTerm)) {
+                    row.style.display = 'table-row';
+                    visibleSections.add(categoryName + '-commands');
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+            
+            // Затем скрываем пустые секции
+            sections.forEach(section => {
+                if (!visibleSections.has(section.id) && searchTerm.length > 0) {
+                    section.style.display = 'none';
+                }
+            });
+            
+            // Активируем кнопку "Все" при пустом поиске
+            if (searchTerm.length === 0) {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                document.querySelector('[data-tag="all"]').classList.add('active');
+            }
+        });
+    });
+</script>
+</body>
+</html> 

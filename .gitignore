@@ -1,0 +1,19 @@
+# Игнорировать скрипт загрузки на GitHub
+upload_to_github.bat
+upload_to_github.ps1
+deploy.ps1
+deploy.bat
+*.ps1
+
+# Игнорировать токены и секреты
+*.token
+*.key
+*secret*
+*password*
+
+# Временные файлы
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+

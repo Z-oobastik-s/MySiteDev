@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - Zoobastiks</title>
+    <meta name="description" content="Последние новости и обновления сервера Zoobastiks Minecraft">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../Style/dark-theme.css">
+    <link rel="icon" href="../icon/logo.png" type="image/png">
+</head>
+<body>
+    
+    <div class="nav">
+        <a href="../index.html"><i class="fas fa-home"></i> Главная</a>
+        <a href="wiki.html"><i class="fas fa-book"></i> Вики</a>
+        <a href="voting.html"><i class="fas fa-vote-yea"></i> Голосование</a>
+        <a href="commands.html"><i class="fas fa-terminal"></i> Команды</a>
+        <a href="rules.html"><i class="fas fa-gavel"></i> Правила</a>
+        <a href="news.html" class="active"><i class="fas fa-newspaper"></i> Новости</a>
+        <a href="help.html"><i class="fas fa-question-circle"></i> Помощь</a>
+        <a href="https://discord.gg/vEaCqQ7kXN"><i class="fab fa-discord"></i> Дискорд</a>
+        <a href="https://t.me/ReZoobastik"><i class="fab fa-telegram"></i> Телеграм</a>
+        <a href="id_items.html"><i class="fas fa-biohazard"></i> ☣︎</a>
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="newsSearch" class="search-input" placeholder="Поиск новостей...">
+            </div>
+            
+            <div class="news-filters">
+                <button class="button active" data-tag="all">Все новости</button>
+                <button class="button" data-tag="update">Обновления</button>
+                <button class="button" data-tag="event">События</button>
+                <button class="button" data-tag="important">Важное</button>
+            </div>
+        </div>
+        
+        <div class="news-container">
+            <!-- Новость 1 -->
+            <div class="card news-item mb-4" data-tags="update important">
+                <div class="card-header">
+                    <h3>Добавлен новый раздел в магазин "Книги"</h3>
+                    <div class="news-meta">
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 15.07.2024</span>
+                        <span class="news-author"><i class="far fa-user"></i> Администрация</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="news-content">
+                        <p>Уважаемые игроки!</p>
+                        <p>Мы рады сообщить, что в магазине сервера появился новый раздел "Книги". Теперь вы можете приобрести любую зачарованную книгу для улучшения своего снаряжения.</p>
+                        <p>В ассортименте представлены все зачарования, доступные в игре. Это отличный способ получить нужное зачарование без необходимости полагаться только на удачу при использовании зачарованного стола.</p>
+                    </div>
+                    <div class="news-tags">
+                        <span class="tag tag-update">Обновление</span>
+                        <span class="tag tag-important">Важное</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Новость 2 -->
+            <div class="card news-item mb-4" data-tags="update">
+                <div class="card-header">
+                    <h3>Обновлена команда /hub</h3>
+                    <div class="news-meta">
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 10.07.2024</span>
+                        <span class="news-author"><i class="far fa-user"></i> Администрация</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="news-content">
+                        <p>Мы обновили функциональность команды <code>/hub</code>!</p>
+                        <p>Также на спавне появился новый NPC "Выбор сервера", который позволяет быстро перемещаться между режимами игры.</p>
+                        <p>Теперь вы можете легко переключаться между режимом ОдинБлок и обычным выживанием, чтобы разнообразить свою игру.</p>
+                        <p>Наслаждайтесь и приятной игры! 😊</p>
+                    </div>
+                    <div class="news-tags">
+                        <span class="tag tag-update">Обновление</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pagination-container text-center">
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+            </div>
+        </div>
+        
+        <div class="button-container text-center mt-4 mb-4">
+            <a href="../index.html" class="button"><i class="fas fa-home"></i> На Главную</a>
+            <a href="help.html" class="button"><i class="fas fa-question-circle"></i> Нужна помощь?</a>
+        </div>
+    </div>
+    
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Кнопки навигации из index.html -->
+    <div class="fixed-navigation fixed-nav-buttons">
+        <a href="#" class="nav-button nav-button-back">Назад</a>
+        <a href="#" class="scroll-button scroll-up" id="scroll-up">Вверх</a>
+        <a href="#" class="scroll-button scroll-down" id="scroll-down" style="display: none;">Вниз</a>
+        <a href="#" class="nav-button nav-button-forward">Вперёд</a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Z-oobastik-s | <a href="https://z-oobastik-s.github.io/MySiteDev/" target="_blank">https://z-oobastik-s.github.io/MySiteDev/</a></p>
+        <p>Все материалы защищены лицензией. Использование и копирование запрещено.</p>
+        <p>Minecraft является товарным знаком Mojang Studios.</p>
+    </div>
+    
+    <script src="../scripts/shared.js"></script>
+    
+    <style>
+        .news-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .news-filters .button {
+            padding: 0.5rem 1rem;
+            opacity: 0.7;
+        }
+        
+        .news-filters .button.active {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+        
+        .news-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .news-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tag {
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .tag-update {
+            background-color: rgba(3, 218, 198, 0.2);
+            color: #03dac6;
+        }
+        
+        .tag-event {
+            background-color: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+        
+        .tag-important {
+            background-color: rgba(233, 30, 99, 0.2);
+            color: #e91e63;
+        }
+        
+        .pagination-container {
+            margin: 2rem 0;
+        }
+        
+        .pagination {
+            display: inline-flex;
+            background-color: #1e1e1e;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .pagination a {
+            padding: 0.8rem 1.2rem;
+            color: #b0b0b0;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination a:hover {
+            background-color: #2d2d2d;
+        }
+        
+        .pagination a.active {
+            background-color: #bb86fc;
+            color: #121212;
+        }
+        
+        code {
+            background-color: rgba(187, 134, 252, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.news-filters .button');
+            const newsItems = document.querySelectorAll('.news-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const tag = this.getAttribute('data-tag');
+                    
+                    // Filter news items
+                    newsItems.forEach(item => {
+                        if (tag === 'all' || item.getAttribute('data-tags').includes(tag)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.getElementById('newsSearch');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                newsItems.forEach(item => {
+                    const title = item.querySelector('h3').textContent.toLowerCase();
+                    const content = item.querySelector('.news-content').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

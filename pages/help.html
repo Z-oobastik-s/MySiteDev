@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Помощь - Zoobastiks</title>
+    <meta name="description" content="Центр помощи сервера Zoobastiks Minecraft. Часто задаваемые вопросы, руководства и контактная информация">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../Style/dark-theme.css">
+    <link rel="icon" href="../icon/logo.png" type="image/png">
+</head>
+<body>
+    
+    <div class="nav">
+        <a href="../index.html"><i class="fas fa-home"></i> Главная</a>
+        <a href="wiki.html"><i class="fas fa-book"></i> Вики</a>
+        <a href="voting.html"><i class="fas fa-vote-yea"></i> Голосование</a>
+        <a href="commands.html"><i class="fas fa-terminal"></i> Команды</a>
+        <a href="rules.html"><i class="fas fa-gavel"></i> Правила</a>
+        <a href="news.html"><i class="fas fa-newspaper"></i> Новости</a>
+        <a href="help.html" class="active"><i class="fas fa-question-circle"></i> Помощь</a>
+        <a href="https://discord.gg/vEaCqQ7kXN"><i class="fab fa-discord"></i> Дискорд</a>
+        <a href="https://t.me/ReZoobastik"><i class="fab fa-telegram"></i> Телеграм</a>
+        <a href="id_items.html"><i class="fas fa-biohazard"></i> ☣︎</a>
+    </div>
+    
+    <div class="container">
+        <!-- Введение -->
+        <div class="section">
+            <h2 class="section-title">Центр помощи сервера Zoobastiks</h2>
+            <p>Добро пожаловать в центр помощи сервера Zoobastiks! Здесь вы найдете ответы на часто задаваемые вопросы, полезные руководства и способы связи с администрацией.</p>
+            
+            <div class="search-container mb-4">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="helpSearch" class="search-input" placeholder="Поиск ответов на вопросы...">
+            </div>
+        </div>
+        
+        <!-- Карточки быстрого доступа -->
+        <div class="section">
+            <h3 class="section-title">Быстрая помощь</h3>
+            <div class="help-cards">
+                <div class="card help-card">
+                    <div class="card-header"><i class="fas fa-gamepad"></i> Как начать игру</div>
+                    <div class="card-body">
+                        <p>Основная информация для новых игроков о том, как начать игру на сервере.</p>
+                        <a href="wiki.html" class="button mt-2">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="card help-card">
+                    <div class="card-header"><i class="fas fa-gavel"></i> Правила сервера</div>
+                    <div class="card-body">
+                        <p>Ознакомьтесь с правилами сервера, чтобы избежать неприятностей.</p>
+                        <a href="rules.html" class="button mt-2">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="card help-card">
+                    <div class="card-header"><i class="fas fa-terminal"></i> Команды</div>
+                    <div class="card-body">
+                        <p>Список всех доступных команд на сервере и их описание.</p>
+                        <a href="commands.html" class="button mt-2">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="card help-card">
+                    <div class="card-header"><i class="fas fa-cube"></i> ОдинБлок</div>
+                    <div class="card-body">
+                        <p>Руководство по режиму ОдинБлок и его особенностям.</p>
+                        <a href="wiki.html#oneblock" class="button mt-2">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Часто задаваемые вопросы -->
+        <div class="section" id="faq">
+            <h3 class="section-title">Часто задаваемые вопросы</h3>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Как установить скин?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Для установки скина на сервере используйте следующие команды:</p>
+                        <ul>
+                            <li><code>/skin [никнейм]</code> - установить скин как у указанного игрока</li>
+                            <li><code>/skin url [ссылка]</code> - загрузить скин по ссылке (ссылка должна заканчиваться на .png)</li>
+                        </ul>
+                        <p>Скин будет применен немедленно, перезаход на сервер не требуется.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Как добавить друга на остров?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Чтобы добавить друга на ваш остров и играть вместе, используйте команду:</p>
+                        <p><code>/ob team invite [никнейм]</code></p>
+                        <p>После принятия приглашения вашим другом, вы будете иметь общий остров. Обратите внимание, что остров друга будет удален при принятии приглашения.</p>
+                        <p>Для управления командой острова используйте:</p>
+                        <p><code>/ob team help</code></p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Как удалить свой остров?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Если вы хотите начать игру заново, вы можете удалить свой текущий остров и создать новый с помощью команды:</p>
+                        <p><code>/ob reset</code></p>
+                        <p><strong>Внимание!</strong> Это действие необратимо и приведет к потере всего прогресса на вашем острове.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Где получить работу?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Получить работу на сервере можно двумя способами:</p>
+                        <ol>
+                            <li>Подойти к NPC "Работы" на спавне и взаимодействовать с ним</li>
+                            <li>Использовать команду <code>/jobs</code>, которая откроет меню выбора работы</li>
+                        </ol>
+                        <p>В меню вы сможете выбрать одну из 10 доступных профессий, каждая из которых позволяет зарабатывать игровую валюту разными способами.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Сколько радиус острова?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>По умолчанию радиус острова составляет 50 блоков. Вы можете расширить его, приобретая увеличение в магазине сервера <code>/shop</code>.</p>
+                        <p>Расширение радиуса позволит вам строить более масштабные постройки и размещать больше объектов на своем острове.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Гриферство разрешено?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Нет</strong>, гриферство строго запрещено на нашем сервере.</p>
+                        <p>На сервере реализована надежная система защиты:</p>
+                        <ul>
+                            <li>В режиме ОдинБлок ваш остров автоматически защищен от других игроков</li>
+                            <li>Игроки не могут сломать или разместить блоки на чужих островах без разрешения</li>
+                            <li>Взрывы криперов и других мобов автоматически восстанавливаются в течение 15 секунд</li>
+                        </ul>
+                        <p>Благодаря этому вам не нужно беспокоиться о защите своих построек с помощью приватов.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Как заработать игровую валюту?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Существует множество способов заработать валюту на сервере:</p>
+                        <ul>
+                            <li><strong>Система работ:</strong> Выполняйте задания в выбранной профессии через <code>/jobs</code></li>
+                            <li><strong>Дроп валюты:</strong> Убивайте мобов и добывайте блоки - они дропают монеты!</li>
+                            <li><strong>Голосование:</strong> Голосуйте за сервер на мониторингах (страница "Голосование" на сайте)</li>
+                            <li><strong>Telegram регистрация:</strong> Зарегистрируйте ник в Telegram-канале (+500 монет, 20 уровней опыта, зачарованный меч)</li>
+                            <li><strong>Игра "Угадай слово":</strong> Играйте в Telegram через <code>/game</code> - награды от 20 до 10000+ монет</li>
+                            <li><strong>Рулетка:</strong> Используйте <code>/random</code> в Telegram (кулдаун 5 минут) - случайные ценные награды</li>
+                            <li><strong>Торговля:</strong> Продавайте ресурсы другим игрокам через аукцион <code>/ah</code> или магазин</li>
+                            <li><strong>Топы:</strong> Попадайте в топы по активности и балансу - получайте награды ежедневно!</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Как восстановить предметы после смерти?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>На сервере есть система восстановления предметов после смерти:</p>
+                        <ul>
+                            <li><code>/dp list</code> - посмотреть список ваших точек смерти (до 5 последних)</li>
+                            <li><code>/dp tp [номер]</code> - телепортироваться на место смерти за 250 монет</li>
+                            <li><code>/dp items [номер]</code> - восстановить все предметы с точки смерти за рассчитанную стоимость</li>
+                            <li><code>/dp preview</code> - посмотреть стоимость восстановления вашего текущего инвентаря</li>
+                            <li><code>/dp preview [номер]</code> - детальная информация о конкретной точке смерти</li>
+                        </ul>
+                        <p><strong>Важно:</strong> Стоимость восстановления зависит от ценности предметов и их зачарований. Чем дороже предметы, тем больше стоимость восстановления.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Как зарегистрироваться в Telegram?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Регистрация в Telegram открывает множество возможностей:</p>
+                        <ol>
+                            <li>В игре используйте команду <code>/telegram link</code> - получите код регистрации</li>
+                            <li>Перейдите в Telegram канал сервера: <a href="https://t.me/ReZoobastik" target="_blank">t.me/ReZoobastik</a></li>
+                            <li>Найдите канал регистрации (тему) и отправьте туда свой никнейм без пробелов</li>
+                            <li>Или отправьте код, полученный командой <code>/telegram link</code></li>
+                            <li>После регистрации вы получите награды: 500 монет, 20 уровней опыта и зачарованный железный меч</li>
+                        </ol>
+                        <p><strong>Преимущества регистрации:</strong> Доступ к командам в Telegram, играм, рулетке, переводам денег, системе репутации и многому другому!</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Почему я не вижу кастомных мобов?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Кастомные мобы появляются в зависимости от вашего уровня опыта:</p>
+                        <ul>
+                            <li><strong>Уровень 15-19:</strong> Базовые мобы (зомби, скелеты, пауки, криперы)</li>
+                            <li><strong>Уровень 20-24:</strong> Добавляются ведьмы, утопленники, эндермены</li>
+                            <li><strong>Уровень 25-29:</strong> Появляются пиллагеры, призыватели, разорители</li>
+                            <li><strong>Уровень 30-39:</strong> Встречаются иссушители, иллюзионисты</li>
+                            <li><strong>Уровень 40+:</strong> Все мобы включая боссовых (страж, старший страж)</li>
+                        </ul>
+                        <p>Если ваш уровень ниже 15, кастомные мобы не будут появляться. Повышайте уровень, чтобы встретить более сильных противников!</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Как зачаровать предмет до высокого уровня?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>На сервере доступна улучшенная система зачарований:</p>
+                        <ul>
+                            <li><strong>Комбинирование:</strong> В наковальне можно комбинировать одинаковые зачарования (например, Добыча III + Добыча III = Добыча IV)</li>
+                            <li><strong>Максимальный уровень:</strong> До 255 уровня в наковальне!</li>
+                            <li><strong>Стоимость:</strong> Стоимость зачарований оптимизирована для высоких уровней</li>
+                            <li><strong>Получение:</strong> Зачарования можно получить через зачарованный стол или торгуя с жителями</li>
+                        </ul>
+                        <p>Используйте наковальню для создания мощных предметов с максимальными зачарованиями!</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Как перейти в режим выживания?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Чтобы перейти из режима ОдинБлок в обычное выживание, вы можете:</p>
+                        <ol>
+                            <li>Подойти к NPC "Выбор сервера" на спавне и взаимодействовать с ним</li>
+                            <li>Использовать команду <code>/hub</code>, а затем выбрать режим "Выживание"</li>
+                        </ol>
+                        <p>Режим выживания предлагает классический геймплей Minecraft с доступом к аду и энд-миру, без ограничений на строительство.</p>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <i class="fas fa-question-circle"></i> Как использовать локальный и глобальный чат?
+                        <i class="fas fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>На сервере доступны два режима чата:</p>
+                        <ul>
+                            <li><strong>Локальный чат:</strong> Сообщения видны только игрокам в радиусе 100 блоков. Используйте обычный чат для локальных сообщений</li>
+                            <li><strong>Глобальный чат:</strong> Сообщения видны всем игрокам на сервере. Используйте символ <code>!</code> в начале сообщения для отправки в глобальный чат из локального режима</li>
+                            <li><strong>Упоминания:</strong> Упоминайте других игроков через <code>@ник</code> - они получат уведомление и звук</li>
+                            <li><strong>Личные сообщения:</strong> Используйте <code>/msg [ник] [сообщение]</code> для приватной переписки</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Полезные гайды -->
+        <div class="section">
+            <h3 class="section-title">Полезные гайды</h3>
+            
+            <div class="guides-list">
+                <a href="wiki.html#start" class="card guide-card">
+                    <div class="card-header"><i class="fas fa-book"></i> Гайд для новичков</div>
+                    <div class="card-body">
+                        <p>Все необходимое для начала игры на сервере Zoobastiks.</p>
+                    </div>
+                </a>
+                
+                <a href="wiki.html#oneblock" class="card guide-card">
+                    <div class="card-header"><i class="fas fa-cube"></i> ОдинБлок: фазы и прохождение</div>
+                    <div class="card-body">
+                        <p>Подробное руководство по всем 21 фазам режима ОдинБлок.</p>
+                    </div>
+                </a>
+                
+                <a href="wiki.html#economy" class="card guide-card">
+                    <div class="card-header"><i class="fas fa-coins"></i> Экономика сервера</div>
+                    <div class="card-body">
+                        <p>Как зарабатывать и тратить игровую валюту.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Связь с администрацией -->
+        <div class="section">
+            <h3 class="section-title">Связь с администрацией</h3>
+            
+            <div class="contact-methods">
+                <div class="card contact-card">
+                    <div class="card-header"><i class="fab fa-discord"></i> Discord</div>
+                    <div class="card-body">
+                        <p>Присоединяйтесь к нашему Discord-серверу для быстрой помощи и общения с игроками.</p>
+                        <a href="https://discord.gg/vEaCqQ7kXN" class="button mt-2" target="_blank">Присоединиться</a>
+                    </div>
+                </div>
+                
+                <div class="card contact-card">
+                    <div class="card-header"><i class="fab fa-telegram"></i> Telegram</div>
+                    <div class="card-body">
+                        <p>Наш Telegram-канал для новостей, общения и помощи.</p>
+                        <a href="https://t.me/ReZoobastik" class="button mt-2" target="_blank">Подписаться</a>
+                    </div>
+                </div>
+                
+                <div class="card contact-card">
+                    <div class="card-header"><i class="fas fa-envelope"></i> Email</div>
+                    <div class="card-body">
+                        <p>Для более формальных обращений используйте электронную почту.</p>
+                        <a href="mailto:support@zoobastiks.com" class="button mt-2">Написать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="button-container text-center mt-4 mb-4">
+            <a href="../index.html" class="button"><i class="fas fa-home"></i> На Главную</a>
+            <a href="wiki.html" class="button"><i class="fas fa-book"></i> Вики</a>
+        </div>
+    </div>
+    
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Кнопки навигации из index.html -->
+    <div class="fixed-navigation fixed-nav-buttons">
+        <a href="#" class="nav-button nav-button-back">Назад</a>
+        <a href="#" class="scroll-button scroll-up" id="scroll-up">Вверх</a>
+        <a href="#" class="scroll-button scroll-down" id="scroll-down" style="display: none;">Вниз</a>
+        <a href="#" class="nav-button nav-button-forward">Вперёд</a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Z-oobastik-s | <a href="https://z-oobastik-s.github.io/MySiteDev/" target="_blank">https://z-oobastik-s.github.io/MySiteDev/</a></p>
+        <p>Все материалы защищены лицензией. Использование и копирование запрещено.</p>
+        <p>Minecraft является товарным знаком Mojang Studios.</p>
+    </div>
+    
+    <script src="../scripts/shared.js"></script>
+    
+    <style>
+        .help-cards, .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .help-card, .contact-card, .guide-card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-body .button {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+        
+        .guides-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .guide-card {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+        
+        .guide-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .accordion {
+            margin-top: 1rem;
+        }
+        
+        .accordion-item {
+            margin-bottom: 1rem;
+            background-color: rgba(30, 30, 30, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .accordion-header {
+            padding: 1rem;
+            background-color: #1e1e1e;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background-color: #2d2d2d;
+        }
+        
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-item.active .accordion-content {
+            padding: 1rem;
+            max-height: 1000px;
+        }
+        
+        code {
+            background-color: rgba(187, 134, 252, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Accordion functionality
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                
+                header.addEventListener('click', function() {
+                    // Toggle active class
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.getElementById('helpSearch');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                // Search in FAQ
+                accordionItems.forEach(item => {
+                    const header = item.querySelector('.accordion-header').textContent.toLowerCase();
+                    const content = item.querySelector('.accordion-content').textContent.toLowerCase();
+                    
+                    if (header.includes(searchTerm) || content.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        
+                        // Open the accordion item if there's a search term
+                        if (searchTerm.length > 0) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

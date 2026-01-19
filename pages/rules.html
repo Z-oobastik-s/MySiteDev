@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила сервера Zoobastiks</title>
+    <meta name="description" content="Официальные правила сервера Zoobastiks Minecraft">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../Style/dark-theme.css">
+    <link rel="icon" href="../icon/logo.png" type="image/png">
+    <style>
+        .rules-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .rules-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .rules-section {
+            background-color: #222;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rules-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #ff3366, #33ccff);
+        }
+        
+        .rules-section h2 {
+            color: #33ccff;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+        
+        .rules-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: rule-counter;
+        }
+        
+        .rules-list li {
+            position: relative;
+            padding: 15px 0 15px 50px;
+            border-bottom: 1px dashed #444;
+            counter-increment: rule-counter;
+        }
+        
+        .rules-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .rules-list li::before {
+            content: counter(rule-counter);
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(45deg, #ff3366, #33ccff);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .important {
+            background-color: rgba(255, 77, 77, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #ff4d4d;
+        }
+        
+        .important h3 {
+            color: #ff4d4d;
+            margin-top: 0;
+        }
+        
+        .note {
+            background-color: rgba(77, 166, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4da6ff;
+        }
+        
+        .note h3 {
+            color: #4da6ff;
+            margin-top: 0;
+        }
+        
+        .punishment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .punishment-table th {
+            background-color: #333;
+            color: white;
+            text-align: left;
+            padding: 12px 20px;
+        }
+        
+        .punishment-table td {
+            padding: 12px 20px;
+            border-bottom: 1px solid #444;
+            background-color: #2a2a2a;
+        }
+        
+        .punishment-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .punishment-table tr:hover td {
+            background-color: #333;
+        }
+        
+        .punishment-level-1 {
+            color: #ffaa00;
+        }
+        
+        .punishment-level-2 {
+            color: #ff6600;
+        }
+        
+        .punishment-level-3 {
+            color: #ff3333;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="nav">
+        <a href="../index.html"><i class="fas fa-home"></i> Главная</a>
+        <a href="wiki.html"><i class="fas fa-book"></i> Вики</a>
+        <a href="voting.html"><i class="fas fa-vote-yea"></i> Голосование</a>
+        <a href="commands.html"><i class="fas fa-terminal"></i> Команды</a>
+        <a href="rules.html" class="active"><i class="fas fa-gavel"></i> Правила</a>
+        <a href="news.html"><i class="fas fa-newspaper"></i> Новости</a>
+        <a href="help.html"><i class="fas fa-question-circle"></i> Помощь</a>
+        <a href="https://discord.gg/vEaCqQ7kXN"><i class="fab fa-discord"></i> Дискорд</a>
+        <a href="https://t.me/ReZoobastik"><i class="fab fa-telegram"></i> Телеграм</a>
+        <a href="id_items.html"><i class="fas fa-biohazard"></i> ☣︎</a>
+    </div>
+
+    <!-- Основной контент правил -->
+    <div class="container">
+        <div class="section rules-container">
+            <div class="rules-header">
+                <h2 class="section-title">Правила сервера Zoobastiks</h2>
+                <p>Соблюдение этих правил обязательно для всех игроков</p>
+            </div>
+            
+            <div class="important">
+                <h3>Важное уведомление!</h3>
+                <p>Незнание правил не освобождает от ответственности. Регистрируясь на сервере, вы автоматически соглашаетесь с данными правилами.</p>
+                <p>Администрация имеет право изменять данные правила без уведомления игроков. Проверяйте обновления правил регулярно.</p>
+            </div>
+            
+            <div class="rules-section">
+                <h2>Общие правила поведения</h2>
+                <ul class="rules-list">
+                    <li>Уважительно относитесь к другим игрокам и администрации. Запрещены оскорбления, унижения, дискриминация и угрозы.</li>
+                    <li>Запрещено использование нецензурной лексики в глобальном чате и публичных местах.</li>
+                    <li>Запрещено обсуждение политических, религиозных и других тем, которые могут вызвать конфликт.</li>
+                    <li>Запрещён спам, флуд и капс в общих чатах.</li>
+                    <li>Запрещена реклама других серверов, проектов, сайтов, без согласования с администрацией.</li>
+                </ul>
+            </div>
+            
+            <div class="rules-section">
+                <h2>Запрещённые модификации и действия</h2>
+                <ul class="rules-list">
+                    <li>Запрещено использование читов, хаков, эксплойтов и других модификаций, дающих преимущество в игре.</li>
+                    <li>Запрещены любые действия, направленные на нарушение работы сервера (DDoS, флуд запросами и т.д.).</li>
+                    <li>Запрещён дюп вещей (дублирование), использование багов и эксплойтов.</li>
+                    <li>Разрешены только те модификации, которые не дают игровое преимущество: OptiFine, мини-карты, шейдеры, ресурспаки.</li>
+                    <li>Запрещено использование макросов и автокликеров.</li>
+                </ul>
+            </div>
+            
+            <div class="rules-section">
+                <h2>Правила строительства и территорий</h2>
+                <ul class="rules-list">
+                    <li>Запрещено строительство огромных конструкций из блоков с высокой нагрузкой на сервер (навороченные редстоун механизмы, структуры с большим количеством сущностей).</li>
+                    <li>Запрещено строить оскорбительные или неприемлемые сооружения.</li>
+                    <li>Запрещён гриферинг (разрушение построек других игроков, кража ресурсов).</li>
+                    <li>Запрещено блокировать доступ к общественным зонам, дорогам и порталам.</li>
+                    <li>Уважайте личное пространство других игроков, не стройте вплотную к чужим постройкам без разрешения.</li>
+                </ul>
+            </div>
+            
+            <div class="rules-section">
+                <h2>Экономика и торговля</h2>
+                <ul class="rules-list">
+                    <li>Запрещено мошенничество в торговле между игроками.</li>
+                    <li>Запрещена продажа игровых ценностей за реальные деньги.</li>
+                    <li>Запрещено создание рынков или магазинов с заведомо завышенными ценами с целью обмана.</li>
+                    <li>Запрещён обман новичков с использованием их незнания игры.</li>
+                </ul>
+            </div>
+            
+            <div class="rules-section">
+                <h2>PvP и боевые действия</h2>
+                <ul class="rules-list">
+                    <li>PvP разрешено только в специально отведённых зонах или по обоюдному согласию.</li>
+                    <li>Запрещён намеренный урон по другим игрокам вне зон PvP.</li>
+                    <li>Запрещено злоупотребление PvP-ловушками в общедоступных местах.</li>
+                    <li>Запрещён киллаура, триггербот и другие боевые читы.</li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                <h3>Примечание</h3>
+                <p>Администрация оставляет за собой право выдавать наказания по своему усмотрению, в зависимости от тяжести нарушения и прошлой истории нарушений игрока.</p>
+            </div>
+            
+            <div class="rules-section">
+                <h2>Система наказаний</h2>
+                <p>За нарушение правил предусмотрены следующие наказания:</p>
+                
+                <table class="punishment-table">
+                    <thead>
+                        <tr>
+                            <th>Нарушение</th>
+                            <th>Первое нарушение</th>
+                            <th>Повторное нарушение</th>
+                            <th>Систематическое нарушение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Оскорбление игроков</td>
+                            <td class="punishment-level-1">Мут на 30 минут</td>
+                            <td class="punishment-level-2">Мут на 3 часа</td>
+                            <td class="punishment-level-3">Бан на 1 день</td>
+                        </tr>
+                        <tr>
+                            <td>Использование читов</td>
+                            <td class="punishment-level-2">Бан на 7 дней</td>
+                            <td class="punishment-level-3">Бан на 30 дней</td>
+                            <td class="punishment-level-3">Перманентный бан</td>
+                        </tr>
+                        <tr>
+                            <td>Гриферство</td>
+                            <td class="punishment-level-1">Предупреждение + возмещение</td>
+                            <td class="punishment-level-2">Бан на 3 дня</td>
+                            <td class="punishment-level-3">Бан на 30 дней</td>
+                        </tr>
+                        <tr>
+                            <td>Спам</td>
+                            <td class="punishment-level-1">Мут на 15 минут</td>
+                            <td class="punishment-level-1">Мут на 1 час</td>
+                            <td class="punishment-level-2">Мут на 1 день</td>
+                        </tr>
+                        <tr>
+                            <td>Реклама других серверов</td>
+                            <td class="punishment-level-2">Мут на 1 день</td>
+                            <td class="punishment-level-3">Бан на 7 дней</td>
+                            <td class="punishment-level-3">Перманентный бан</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="button-container text-center mt-4 mb-4">
+            <a href="../index.html" class="button"><i class="fas fa-home"></i> На Главную</a>
+            <a href="help.html" class="button"><i class="fas fa-question-circle"></i> Нужна помощь?</a>
+        </div>
+    </div>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Кнопки навигации -->
+    <div class="fixed-navigation fixed-nav-buttons">
+        <a href="#" class="nav-button nav-button-back">Назад</a>
+        <a href="#" class="scroll-button scroll-up" id="scroll-up">Вверх</a>
+        <a href="#" class="scroll-button scroll-down" id="scroll-down" style="display: none;">Вниз</a>
+        <a href="#" class="nav-button nav-button-forward">Вперёд</a>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Z-oobastik-s | <a href="https://z-oobastik-s.github.io/MySiteDev/" target="_blank">https://z-oobastik-s.github.io/MySiteDev/</a></p>
+        <p>Все материалы защищены лицензией. Использование и копирование запрещено.</p>
+        <p>Minecraft является товарным знаком Mojang Studios.</p>
+    </div>
+    
+    <script src="../scripts/shared.js"></script>
+</body>
+</html> 
